@@ -1,2 +1,306 @@
 # HWPL-Global12-Interfaith-Review
 Official website of the HWPL Global12 Interfaith Review.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HWPL Global 12 Interfaith Review</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ===========================
+         HEADER
+    ============================ -->
+
+    <header class="header">
+
+        <div class="logo">
+            HWPL Global 12
+        </div>
+
+        <nav>
+
+            <a href="#latest">Latest Issue</a>
+
+            <a href="#archive">Archive</a>
+
+            <a href="#peace">Peace Messages</a>
+
+            <a href="#about">About</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ===========================
+         HERO
+    ============================ -->
+
+    <section class="hero">
+
+        <div class="hero-overlay">
+
+            <p class="subtitle">
+                Documenting Peace. Inspiring Action.
+            </p>
+
+            <h1>
+
+                HWPL Global 12<br>
+                Interfaith Review
+
+            </h1>
+
+            <p class="description">
+
+                A digital archive sharing
+                interfaith dialogue,
+                peace initiatives,
+                and inspiring stories
+                from around the world.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#latest" class="btn-primary">
+
+                    Read Latest Issue
+
+                </a>
+
+                <a href="issues/vol01.pdf" target="_blank" class="btn-secondary">
+
+                    Download PDF
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===========================
+         LATEST ISSUE
+    ============================ -->
+
+    <section id="latest" class="latest">
+
+        <div class="section-title">
+
+            Latest Issue
+
+        </div>
+
+        <div class="latest-container">
+
+            <div class="cover">
+
+                <img src="images/cover-vol01.jpg">
+
+            </div>
+
+            <div class="issue-info">
+
+                <h2>
+
+                    Volume 01
+
+                </h2>
+
+                <p>
+
+                    June 2026
+
+                </p>
+
+                <p>
+
+                    Inaugural Issue
+
+                </p>
+
+                <div class="buttons">
+
+                    <a href="reader.html">
+
+                        Read Online
+
+                    </a>
+
+                    <a href="issues/vol01.pdf">
+
+                        Download PDF
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===========================
+         ARCHIVE
+    ============================ -->
+
+    <section id="archive">
+
+        <div class="section-title">
+
+            Archive
+
+        </div>
+
+        <div class="bookshelf">
+
+            <div class="book">
+
+                <img src="images/cover-vol01.jpg">
+
+                <p>
+
+                    Vol.01
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===========================
+         PEACE MESSAGE
+    ============================ -->
+
+    <section id="peace">
+
+        <div class="section-title">
+
+            Peace Messages
+
+        </div>
+
+        <p>
+
+            "Peace begins with dialogue."
+
+        </p>
+
+        <button>
+
+            Share Your Message
+
+        </button>
+
+    </section>
+
+
+
+
+    <!-- ===========================
+         GET INVOLVED
+    ============================ -->
+
+    <section class="support">
+
+        <div class="section-title">
+
+            Get Involved
+
+        </div>
+
+        <div class="cards">
+
+            <div>
+
+                Become a Partner
+
+            </div>
+
+            <div>
+
+                Contact Us
+
+            </div>
+
+            <div>
+
+                Support Peace
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- ===========================
+         ABOUT
+    ============================ -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            About This Publication
+
+        </div>
+
+        <p>
+
+            HWPL Global 12 Interfaith Review
+            documents inspiring peace activities,
+            interfaith dialogue,
+            and collaborative efforts
+            around the world.
+
+        </p>
+
+    </section>
+
+
+
+
+    <!-- ===========================
+         FOOTER
+    ============================ -->
+
+    <footer>
+
+        <p>
+
+            © 2026 HWPL Global 12
+
+        </p>
+
+    </footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
