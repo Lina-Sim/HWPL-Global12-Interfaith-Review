@@ -251,7 +251,7 @@ nav a:hover{
 
 .btn-gold:hover{
 
-    transform:translateY(-3px);
+    transform:translateY(30px);
 
     box-shadow:var(--shadow);
 
@@ -507,7 +507,7 @@ Building a lasting archive of peace through dialogue, education, and cooperation
 
 .book h3{
 
-    margin-top:18px;
+    margin-top:40px;
 
     color:var(--navy);
 
