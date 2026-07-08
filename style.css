@@ -206,7 +206,7 @@ nav a:hover{
 
     max-width:720px;
 
-    margin:auto;
+    margin-bottom: 50px;
 
     opacity:.9;
 
@@ -479,6 +479,8 @@ Building a lasting archive of peace through dialogue, education, and cooperation
 
 .book img{
 
+    max-height: 55vh;
+   
     width:170px;
 
     border-radius:8px;
