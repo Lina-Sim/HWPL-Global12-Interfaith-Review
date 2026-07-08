@@ -258,17 +258,22 @@ nav a:hover{
 }
 .btn-outline{
 
-    border:2px solid white;
+    border:2px solid var(--gold);
 
     color:white;
 
 }
 
+
 .btn-outline:hover{
 
-    background:white;
+    background:var(--gold);
 
-    color:var(--navy);
+    color:white;
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow);
 
 }
 
