@@ -278,6 +278,33 @@ nav a:hover{
 }
 
 /* ==============================
+   PDF DOWNLOAD BUTTON
+================================= */
+
+.btn-pdf{
+
+    border:1px solid #D8C08A;
+
+    color:#777 !important;
+
+    background:transparent;
+
+}
+
+
+.btn-pdf:hover{
+
+    background:var(--gold);
+
+    color:white !important;
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ==============================
    SECTION HEADER
 ================================= */
 
