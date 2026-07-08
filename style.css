@@ -332,3 +332,81 @@ nav a:hover{
     align-items:center;
 
 }
+
+.cover{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.cover img{
+
+    width:360px;
+
+    border-radius:10px;
+
+   box-shadow:
+
+0 40px 80px rgba(0,0,0,.18),
+
+0 12px 18px rgba(0,0,0,.08);
+
+    transition:.45s;
+
+}
+
+.cover img:hover{
+
+    transform:
+
+        rotate(-2deg)
+
+        scale(1.03)
+
+        translateY(-8px);
+
+}
+
+.latest-info .date{
+
+    color:var(--gold);
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+    margin-bottom:12px;
+
+}
+
+.latest-info h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:46px;
+
+    color:var(--navy);
+
+    margin-bottom:25px;
+
+}
+
+.latest-info p{
+
+    color:#666;
+
+    font-size:18px;
+
+    margin-bottom:35px;
+
+}
+
+.issue-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+}
