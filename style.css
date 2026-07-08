@@ -235,7 +235,7 @@ nav a:hover{
 
     text-decoration:none;
 
-    transition:.35s;
+    transition:.35s ease;
 
     font-weight:600;
 
@@ -249,7 +249,7 @@ nav a:hover{
 
 }
 
-.btn-gold:hover{
+.btn:hover{
 
     transform:translateY(-3px);
 
@@ -631,5 +631,17 @@ Building a lasting archive of peace through dialogue, education, and cooperation
     color:#666;
 
     margin-bottom:40px;
+
+}
+
+/* ==============================
+   SUPPORT BUTTON FIX
+================================= */
+
+.support .btn{
+
+    display:inline-block;
+
+    margin-top:20px;
 
 }
