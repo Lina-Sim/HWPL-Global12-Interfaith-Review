@@ -251,12 +251,11 @@ nav a:hover{
 
 .btn-gold:hover{
 
-    transform:translateY(30px);
+    transform:translateY(-3px);
 
     box-shadow:var(--shadow);
 
 }
-
 .btn-outline{
 
     border:2px solid white;
@@ -550,5 +549,87 @@ Building a lasting archive of peace through dialogue, education, and cooperation
     letter-spacing:1px;
 
     font-weight:600;
+
+}
+
+/* ==============================
+   ABOUT
+================================= */
+
+.about{
+
+    padding:120px 0;
+
+    background:white;
+
+    text-align:center;
+
+}
+
+
+.narrow{
+
+    max-width:800px;
+
+}
+
+
+.about h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:52px;
+
+    color:var(--navy);
+
+    margin:25px 0;
+
+}
+
+
+.about p{
+
+    font-size:18px;
+
+    color:#666;
+
+}
+
+
+/* ==============================
+   SUPPORT
+================================= */
+
+.support{
+
+    padding:100px 0;
+
+    text-align:center;
+
+    background:#F8F7F4;
+
+}
+
+
+.support h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:48px;
+
+    color:var(--navy);
+
+    margin-bottom:25px;
+
+}
+
+
+.support p{
+
+    font-size:18px;
+
+    color:#666;
+
+    margin-bottom:40px;
 
 }
