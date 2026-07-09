@@ -981,3 +981,87 @@ Building a lasting archive of peace through dialogue, education, and cooperation
     text-decoration:none;
 
 }
+
+/* ===========================
+   MAGAZINE VIEWER
+=========================== */
+
+.magazine-viewer{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:40px;
+
+    margin-top:40px;
+
+}
+
+.page-frame{
+
+    width:700px;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.18);
+
+}
+
+.page-frame img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:6px;
+
+    transition:.35s;
+
+}
+
+.page-btn{
+
+    background:#C89B3C;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 25px;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.page-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.page-number{
+
+    text-align:center;
+
+    margin-top:30px;
+
+    color:#777;
+
+}

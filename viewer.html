@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
 <title>
 HWPL Global 12 Interfaith Review | Volume 01
 </title>
 
-
 <link rel="stylesheet" href="style.css">
 
-
 <style>
+
+/* ===========================
+   VIEWER
+=========================== */
 
 .viewer-page{
 
@@ -25,67 +24,37 @@ HWPL Global 12 Interfaith Review | Volume 01
 
     background:#F8F7F4;
 
-    padding:100px 0;
+    padding:80px 0;
 
 }
-
 
 .viewer-header{
 
     text-align:center;
 
-    margin-bottom:50px;
+    margin-bottom:40px;
 
 }
-
 
 .viewer-header h1{
 
     font-family:'Cormorant Garamond',serif;
 
-    font-size:48px;
+    font-size:54px;
 
     color:#163B73;
 
-}
+    margin-bottom:10px;
 
+}
 
 .viewer-header p{
 
     color:#777;
 
-}
-
-
-
-.pdf-container{
-
-    width:90%;
-
-    max-width:1000px;
-
-    height:80vh;
-
-    margin:auto;
-
-    background:white;
-
-    box-shadow:
-    0 30px 70px rgba(0,0,0,.15);
+    font-size:18px;
 
 }
-
-
-.pdf-container iframe{
-
-    width:100%;
-
-    height:100%;
-
-    border:none;
-
-}
-
 
 .back{
 
@@ -95,58 +64,71 @@ HWPL Global 12 Interfaith Review | Volume 01
 
 }
 
-
 .back a{
 
     text-decoration:none;
 
     color:#C89B3C;
 
-}
+    font-weight:600;
 
+}
 
 </style>
 
-
 </head>
-
 
 <body>
 
-
 <section class="viewer-page">
 
-
 <div class="viewer-header">
-
 
 <h1>
 Volume 01
 </h1>
 
-
 <p>
 HWPL Global 12 Interfaith Review
 </p>
 
+</div>
+
+
+<div class="magazine-viewer">
+
+<button id="prevBtn" class="page-btn">
+◀ Previous
+</button>
+
+
+<div class="page-frame">
+
+<img
+id="pageImage"
+src="images/cover-vol01.png"
+alt="Magazine">
 
 </div>
 
 
-
-<div class="pdf-container">
-
-
-<iframe
-
-src="vol01.pdf">
-
-
-</iframe>
-
+<button id="nextBtn" class="page-btn">
+Next ▶
+</button>
 
 </div>
 
+
+<div class="page-number">
+
+Page
+<span id="currentPage">
+1
+</span>
+/
+12
+
+</div>
 
 
 <div class="back">
@@ -159,10 +141,9 @@ src="vol01.pdf">
 
 </div>
 
-
 </section>
 
-
+<script src="script.js"></script>
 
 </body>
 
