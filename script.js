@@ -36,4 +36,22 @@ window.addEventListener("DOMContentLoaded", () => {
         "pages/vol01-page12.jpg"
     ]);
 
+     document
+    .getElementById("prevBtn")
+    .addEventListener(
+        "click",
+        () => pageFlip.flipPrev()
+    );
+
+
+    document
+    .getElementById("nextBtn")
+    .addEventListener(
+        "click",
+        () => pageFlip.flipNext()
+    );
+
+
 });
+
+

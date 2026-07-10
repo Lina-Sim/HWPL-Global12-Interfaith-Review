@@ -2,6 +2,7 @@
 <html lang="ko">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,54 +15,65 @@
 </head>
 
 
+
 <body>
 
-    <div class="viewer-container">
 
-        <div id="book">
-
-            <div class="page cover">
-                <img src="images/cover-vol01.jpg" alt="Cover">
-            </div>
+<div class="viewer-container">
 
 
-            <div class="page">
-                <img src="images/page01.jpg" alt="Page 1">
-            </div>
+    <div id="book">
 
 
-            <div class="page">
-                <img src="images/page02.jpg" alt="Page 2">
-            </div>
+        <!-- 마우스 방향 표시 영역 -->
 
-
-            <div class="page">
-                <img src="images/page03.jpg" alt="Page 3">
-            </div>
-
-
-            <div class="page">
-                <img src="images/page04.jpg" alt="Page 4">
-            </div>
-
-
+        <div class="hover-zone left-zone">
+            ‹
         </div>
 
 
-        <div class="controls">
-
-            <button id="prevBtn">
-                ‹
-            </button>
-
-            <button id="nextBtn">
-                ›
-            </button>
-
+        <div class="hover-zone right-zone">
+            ›
         </div>
 
 
     </div>
+
+
+
+
+    <!-- 페이지 이동 버튼 -->
+
+    <div class="controls">
+
+
+        <button id="prevBtn">
+            ‹
+        </button>
+
+
+        <button id="nextBtn">
+            ›
+        </button>
+
+
+    </div>
+
+
+
+
+    <!-- Library 이동 버튼 -->
+
+    <a href="index.html" class="library-btn">
+
+        Back to Library
+
+    </a>
+
+
+
+</div>
+
 
 
 
@@ -71,5 +83,6 @@
 
 
 </body>
+
 
 </html>
