@@ -35,7 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
         "pages/vol01-page10.webp",
         "pages/vol01-page11.webp",
         "pages/vol01-page12.webp"
-    ]);
+    );
 
     /* =================================================
        3. 하단 화살표 버튼 클릭 이벤트 연결
