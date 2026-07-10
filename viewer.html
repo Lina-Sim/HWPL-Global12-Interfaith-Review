@@ -1,168 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        HWPL Global 12 Interfaith Review | Volume 01
+    </title>
 
-<title>
-HWPL Global 12 Interfaith Review | Volume 01
-</title>
-
-<link rel="stylesheet" href="style.css">
-
-<style>
-
-body{
-    margin:0;
-    background:#F8F7F4;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-.viewer-page{
-    padding:50px 20px 80px;
-}
-
-.viewer-header{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-.viewer-header h1{
-    font-size:48px;
-    margin:0;
-    color:#163B73;
-}
-
-.viewer-header p{
-    color:#777;
-    margin-top:10px;
-}
-
-/* 책 */
-
-#book{
-    width:100%;
-    max-width:1400px;
-    height:900px;
-    margin:0 auto;
-}
-
-.page{
-
-    background:white;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    overflow:hidden;
-}
-
-.page img{
-
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    display:block;
-}
-
-.back{
-
-    text-align:center;
-    margin-top:40px;
-}
-
-.back a{
-
-    color:#C89B3C;
-    text-decoration:none;
-    font-size:18px;
-}
-
-</style>
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
+
 <body>
 
-<section class="viewer-page">
+    <div class="viewer-container">
 
-<div class="viewer-header">
+        <div id="book">
 
-<h1>Volume 01</h1>
-
-<p>HWPL Global 12 Interfaith Review</p>
-
-</div>
+            <div class="page cover">
+                <img src="images/cover-vol01.jpg" alt="Cover">
+            </div>
 
 
-<div id="book">
-
-<div class="page">
-<img src="images/cover-vol01.png">
-</div>
-
-<div class="page">
-<img src="pages/vol01-page02.jpg">
-</div>
-
-<div class="page">
-<img src="pages/vol01-page03.jpg">
-</div>
-
-<div class="page">
-<img src="pages/vol01-page04.jpg">
-</div>
-
-<div class="page">
-<img src="pages/vol01-page05.jpg">
-</div>
-
-<div class="page">
-<img src="pages/vol01-page06.jpg">
-</div>
-
-<div class="page">
-<img src="pages/vol01-page07.jpg">
-</div>
-
-<div class="page">
-<img src="pages/vol01-page08.jpg">
-</div>
-
-<div class="page">
-<img src="pages/vol01-page09.jpg">
-</div>
-
-<div class="page">
-<img src="pages/vol01-page10.jpg">
-</div>
-
-<div class="page">
-<img src="pages/vol01-page11.jpg">
-</div>
-
-<div class="page">
-<img src="pages/vol01-page12.jpg">
-</div>
-
-</div>
+            <div class="page">
+                <img src="images/page01.jpg" alt="Page 1">
+            </div>
 
 
-<div class="back">
+            <div class="page">
+                <img src="images/page02.jpg" alt="Page 2">
+            </div>
 
-<a href="index.html">
-← Back to Library
-</a>
 
-</div>
+            <div class="page">
+                <img src="images/page03.jpg" alt="Page 3">
+            </div>
 
-</section>
+
+            <div class="page">
+                <img src="images/page04.jpg" alt="Page 4">
+            </div>
+
+
+        </div>
+
+
+        <div class="controls">
+
+            <button id="prevBtn">
+                ‹
+            </button>
+
+            <button id="nextBtn">
+                ›
+            </button>
+
+        </div>
+
+
+    </div>
+
+
 
 <script src="js/page-flip.browser.js"></script>
-<script src="script.js"></script>
+
+<script src="js/flipbook.js"></script>
+
 
 </body>
+
 </html>
