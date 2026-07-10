@@ -25,13 +25,17 @@ a {
 
 /* ================= HEADER ================= */
 .header {
-    position: fixed; /* absolute에서 fixed로 변경하여 화면에 고정 */
+    position: fixed; 
     top: 0;
     width: 100%;
-    z-index: 100; /* 다른 요소들보다 항상 위에 보이도록 설정 */
-    background: linear-gradient(to bottom, rgba(27, 27, 27, 0.9) 0%, rgba(27, 27, 27, 0.7) 70%, rgba(27, 27, 27, 0) 100%);
-    /* 스크롤 내렸을 때 글씨가 겹쳐 보여도 가독성이 유지되도록 은은한 어두운 그라데이션 배경 추가 */
-    backdrop-filter: blur(5px); /* 배경을 살짝 흐리게 만들어 고급스러운 분위기 연출 */
+    z-index: 100; 
+    /* [교정] 어두운 그라데이션을 걷어내고, 아주 투명하고 맑은 흰색 유리 필터를 입힙니다 */
+    background: rgba(255, 255, 255, 0.15) !important; 
+    /* 뒤의 배경이 은은하게 비치면서 글자가 겹쳐도 답답하지 않게 블러 처리만 고급스럽게 유지 */
+    backdrop-filter: blur(8px) !important; 
+    -webkit-backdrop-filter: blur(8px);
+    /* 아래에 아주 미세하게 경계선만 주어 맑은 유리판 같은 입체감을 부여합니다 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
     transition: all 0.3s ease;
 }
 
@@ -39,27 +43,29 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0; /* 고정되었을 때 답답하지 않도록 패딩을 35px에서 20px로 슬림하게 조정 */
+    padding: 22px 0; 
 }
 
 .logo {
     font-family: "Cormorant Garamond", serif;
-    font-size: 28px; /* 헤더가 날렵해지도록 로고 크기 살짝 조정 */
+    font-size: 28px; 
     font-weight: 700;
-    color: white;
+    color: white; /* 어두운 메인 이미지 위에서는 화사하게 빛납니다 */
     letter-spacing: 1px;
 }
 
 nav a {
     margin-left: 35px;
-    color: rgba(255, 255, 255, 0.85);
+    /* [교정] 어두운 배경이 사라졌으므로 메뉴 글자색을 더 뚜렷하고 맑은 화이트로 조정 */
+    color: rgba(255, 255, 255, 0.95) !important; 
     font-size: 15px;
     font-weight: 500;
-    transition: color 0.3s;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 흰 글씨가 배경에 묻히지 않도록 미세한 음영 추가 */
+    transition: all 0.3s;
 }
 
 nav a:hover {
-    color: #c9a227; /* 호버 시 사이트 메인 칼라인 골드빛으로 강조되어 더 직관적임 */
+    color: #c9a227 !important; /* 호버 시 세련된 골드 칼라 포인트 */
 }
 
 /* ================= HERO ================= */
@@ -395,17 +401,24 @@ footer .container {
 }
 
 /* =================================================
-   준비 중인 책 표지 (Coming Soon) 고급 필터 효과
+   준비 중인 책 (Volume 02) 은은한 투명도 및 스타일
 ================================================= */
-.coming-soon-cover {
-    /* 흑백 전환 + 밝기 살짝 낮춤 + 은은한 블러 처리 */
-    filter: grayscale(1) contrast(0.9) brightness(0.8) blur(1.5px);
-    opacity: 0.55;
-    cursor: not-allowed; /* 마우스를 올렸을 때 클릭 불가능한 아이콘으로 변경 */
+/* 어두운 필터를 걷어내고 부드러운 투명도만 매끄럽게 부여 */
+.volume-coming-soon img {
+    opacity: 0.65;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 준비 중인 책은 마우스를 올려도 위로 붕 뜨지 않도록 고정 */
-.book:has(.coming-soon-cover):hover img {
-    transform: none !important;
-    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.15) !important;
+/* 마우스를 올렸을 때도 압박감 없이 다른 책들처럼 자연스럽게 반응 */
+.volume-coming-soon:hover img {
+    opacity: 0.85; /* 마우스 올리면 은은하게 밝아짐 */
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* Coming Soon 글자 스타일 정돈 */
+.book .status-text {
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+    letter-spacing: 0.5px;
 }
