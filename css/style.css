@@ -279,11 +279,15 @@ h2 {
 .book img {
     width: 100%;
     max-width: 180px;
+    /* 💡 가로·세로 크기를 완벽하게 고정합니다 */
+    height: 255px !important; 
+    /* 💡 이미지가 찌그러지거나 늘어나지 않고, 정해진 상자 크기에 맞게 예쁘게 잘리도록 설정 */
+    object-fit: cover !important; 
+    
     box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
     vertical-align: bottom;
 }
-
 .book img:hover {
     transform: translateY(-15px) scale(1.03);
     box-shadow: 10px 25px 30px rgba(0, 0, 0, 0.25);

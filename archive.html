@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     
     <style>
-        /* 아카이브 전용 특별 스타일 (기존 style.css와 자연스럽게 어우러집니다) */
+        /* 아카이브 전용 특별 스타일 */
         .archive-page {
             background: #e8dfd0;
             min-height: 100vh;
@@ -29,6 +29,7 @@
             font-weight: 600;
             color: #5c3a21;
             letter-spacing: 1px;
+            text-decoration: none;
             transition: all 0.3s ease;
         }
         
@@ -82,21 +83,20 @@
             </div>
             
             <!-- 무한 확장이 가능한 대형 책장 그리드 -->
-            <!-- 💡 나중에 플립북(넘어가는 책) 주소가 나오면 href="여기에_링크_주소"를 넣어주시면 됩니다! -->
             <div class="archive-grid">
-                
-                <!-- Volume 02 (최신 호) -->
+    
+                <!-- 1. Volume 02 (최신 호 - 준비 중) -->
                 <div class="book volume-coming-soon">
-                    <a href="#" class="book-link" target="_blank">
+                    <a href="#" class="book-link" onclick="alert('Volume 02는 현재 열심히 준비 중입니다! 조금만 기다려주세요. 😊'); return false;">
                         <img src="images/coming-soon.jpg" alt="Volume 02 Coming Soon">
                         <h3>Volume 02</h3>
                         <p class="status-text">Coming Soon</p>
                     </a>
                 </div>
 
-                <!-- Volume 01 (기존 호) -->
+                <!-- 2. Volume 01 (기존 호 - 정상 연동) -->
                 <div class="book">
-                    <a href="https://lina-sim.github.io/HWPL-Global12-Interfaith-Review/assets/HWPL%20Global12%20Interfaith%20Monthly%20Review.pdf" class="book-link" target="_blank">
+                    <a href="https://lina-sim.github.io/HWPL-Global12-Interfaith-Review/pdf/vol01.pdf" class="book-link" target="_blank">
                         <img src="images/magazine-vol1.jpg" alt="Volume 01">
                         <h3>Volume 01</h3>
                         <p class="status-text">June 2026</p>
