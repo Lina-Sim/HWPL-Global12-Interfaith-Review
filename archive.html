@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine Archive | HWPL Global 12</title>
+    <!-- 구글 폰트 및 기존 스타일 시트 연동 -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* 아카이브 전용 특별 스타일 (기존 style.css와 자연스럽게 어우러집니다) */
+        .archive-page {
+            background: #e8dfd0;
+            min-height: 100vh;
+            padding: 80px 0 120px;
+        }
+        
+        /* 메인으로 돌아가기 버튼 영역 */
+        .archive-nav {
+            margin-bottom: 60px;
+        }
+        
+        .btn-back-home {
+            display: inline-flex;
+            align-items: center;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #5c3a21;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-back-home:hover {
+            color: #c9a227;
+            transform: translateX(-5px); /* 왼쪽으로 살짝 미끄러지는 효과 */
+        }
+        
+        /* 전체 아카이브용 대형 서재 헤더 */
+        .archive-main-header {
+            text-align: center;
+            margin-bottom: 90px;
+        }
+        
+        .archive-main-header h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 60px;
+            font-weight: 600;
+            color: #111;
+            margin-bottom: 15px;
+        }
+        
+        .archive-main-header p {
+            font-size: 16px;
+            color: #666;
+            letter-spacing: 0.5px;
+        }
+
+        /* 책 클릭 시 자연스러운 링크 영역 설정 */
+        .book-link {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="archive-page">
+        <div class="container">
+            
+            <!-- 상단 내비게이션: 메인으로 가기 -->
+            <div class="archive-nav">
+                <a href="index.html" class="btn-back-home">← Back to Home</a>
+            </div>
+            
+            <!-- 아카이브 타이틀 -->
+            <div class="archive-main-header">
+                <h1>The Full Archive</h1>
+                <p>Explore all past volumes of the HWPL Global 12 Interfaith Review</p>
+            </div>
+            
+            <!-- 무한 확장이 가능한 대형 책장 그리드 -->
+            <!-- 💡 나중에 플립북(넘어가는 책) 주소가 나오면 href="여기에_링크_주소"를 넣어주시면 됩니다! -->
+            <div class="archive-grid">
+                
+                <!-- Volume 02 (최신 호) -->
+                <div class="book volume-coming-soon">
+                    <a href="#" class="book-link" target="_blank">
+                        <img src="images/coming-soon.jpg" alt="Volume 02 Coming Soon">
+                        <h3>Volume 02</h3>
+                        <p class="status-text">Coming Soon</p>
+                    </a>
+                </div>
+
+                <!-- Volume 01 (기존 호) -->
+                <div class="book">
+                    <a href="https://lina-sim.github.io/HWPL-Global12-Interfaith-Review/assets/HWPL%20Global12%20Interfaith%20Monthly%20Review.pdf" class="book-link" target="_blank">
+                        <img src="images/magazine-vol1.jpg" alt="Volume 01">
+                        <h3>Volume 01</h3>
+                        <p class="status-text">June 2026</p>
+                    </a>
+                </div>
+
+                <!-- 💡 앞으로 3호, 4호가 추가되면 이 아래로 동일하게 <div class="book">...</div> 덩어리를 계속 붙여넣으시면 됩니다. -->
+
+            </div> <!-- .archive-grid 끝 -->
+
+        </div> <!-- .container 끝 -->
+    </main>
+
+</body>
+</html>
