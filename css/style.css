@@ -431,16 +431,10 @@ footer .container {
 /* =================================================
    상단 고정바 로고 이미지 스타일 조정
 ================================================= */
-/* 기존 .logo 영역을 찾아서 아래로 교체 */
-.logo {
-    display: flex;
-    align-items: center;
-    height: 100%; /* 부모 높이에 맞춤 */
-}
 
-.logo img {
-    height: 35px !important; /* 로고 세로 크기를 35px로 강제 고정 */
-    width: auto !important;  /* 가로 비율은 원본 유지 */
-    display: block;
-    object-fit: contain;
-}
+<div class="logo">
+    <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="images/logo.png" alt="Logo" class="logo-img">
+        <span style="color: white; margin-left: 10px; font-weight: 600; font-size: 18px;">HWPL Global 12</span>
+    </a>
+</div>
