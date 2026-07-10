@@ -432,9 +432,24 @@ footer .container {
    상단 고정바 로고 이미지 스타일 조정
 ================================================= */
 
-<div class="logo">
-    <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
-        <img src="images/logo.png" alt="Logo" class="logo-img">
-        <span style="color: white; margin-left: 10px; font-weight: 600; font-size: 18px;">HWPL Global 12</span>
-    </a>
-</div>
+/* 로고 컨테이너 (정렬 담당) */
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white; /* 헤더가 어두우면 white, 밝으면 #111 */
+}
+
+/* 로고 이미지 크기 강제 고정 */
+.logo-img {
+    height: 35px !important;
+    width: auto !important;
+    margin-right: 10px;
+}
+
+/* 로고 옆 글자 스타일 */
+.logo span {
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
