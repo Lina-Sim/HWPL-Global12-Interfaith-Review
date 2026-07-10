@@ -103,32 +103,37 @@ nav a:hover {
     margin-right: 15px;
     font-size: 15px;
     font-weight: 500;
-    transition: all 0.3s ease;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* 부드러운 애니메이션 효과 */
 }
 
 .btn-gold {
     background: #c9a227;
     color: white;
+    border: 1px solid #c9a227; /* 아웃라인 버튼과 크기를 완전히 똑같이 맞추기 위해 추가 */
 }
 
 .btn-gold:hover {
     background: #a88618;
-    transform: translateY(-2px);
+    border-color: #a88618;
+    transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(201, 162, 39, 0.3);
 }
 
 .btn-outline {
-    border: 1px solid white;
-    color: white;
+    border: 1px solid #c9a227; /* 골드 테두리로 변경하여 통일감 부여 */
+    color: #c9a227; /* 글씨도 골드로 변경 */
+    background: transparent;
 }
 
+/* [요청사항 2] 마우스 커서를 대면 흰색 바탕에 글씨는 배경색(#f7f5f0)으로 변경 */
 .btn-outline:hover {
     background: white;
-    color: #222;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
+    color: #f7f5f0; 
+    border-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); /* 은은한 버튼 그림자 */
 }
-
 /* ================= SECTION ================= */
 section {
     padding: 120px 0; /* 상하 여백을 조금 더 넓혀 시각적 답답함 해소 */
@@ -163,13 +168,28 @@ h2 {
     align-items: center;
 }
 
+/* [요청사항 3] 책자에 연하고 고급진 그림자 기본 세팅 */
 .latest-grid .cover img {
     width: 100%;
     max-width: 380px;
     display: block;
     margin: auto;
-    /* ChatGPT의 피드백을 반영한 한층 입체적이고 세련된 더블 섀도우 효과 */
-    box-shadow: 0 40px 80px rgba(0,0,0,.18), 0 12px 18px rgba(0,0,0,.08);
+    border-radius: 4px; /* 책 모서리를 아주 살짝 둥글게 하여 종이 질감 유도 */
+    
+    /* 대형 매거진에 쓰이는 고급스러운 소프트 더블 섀도우 */
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.07), 
+        0 5px 15px rgba(0, 0, 0, 0.05);
+    
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+/* [요청사항 3] 책자를 선택(마우스 호버)하면 위로 살짝 떠오르는 효과 */
+.latest-grid .cover img:hover {
+    transform: translateY(-15px) scale(1.02); /* 위로 살짝 떠오르고 미세하게 확대 */
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.12), 
+        0 12px 25px rgba(0, 0, 0, 0.08); /* 공중에 떴을 때의 깊은 그림자 */
 }
 
 .latest-info h3 {
@@ -179,9 +199,10 @@ h2 {
     color: #111;
 }
 
+/* [요청사항 1] 버튼이 엔터 한번 친 것처럼 더 밑으로 내려오도록 여백 추가 */
 .latest-info p {
     color: #555;
-    margin-bottom: 30px;
+    margin-bottom: 55px; /* 기존 30px -> 55px로 늘려서 버튼을 아래로 밀어냄 */
 }
 
 .date {
