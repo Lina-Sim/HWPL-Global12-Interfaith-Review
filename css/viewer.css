@@ -141,7 +141,6 @@ body {
     left: 0;
     justify-content: flex-start;
     padding-left: 25px;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 40%); 
 }
 
 /* [수정] 오른쪽 영역: 그라데이션 폭을 좁히고 색상을 훨씬 연하게(0.3 -> 0.12) 조정 */
@@ -149,7 +148,6 @@ body {
     right: 0;
     justify-content: flex-end;
     padding-right: 25px;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 40%);
 }
 
 /* 마우스를 올렸을 때 효과 */
