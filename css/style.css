@@ -135,21 +135,24 @@ nav a:hover {
     box-shadow: 0 10px 20px rgba(201, 162, 39, 0.3);
 }
 
-/* Explore Archive 버튼 기본 및 호버 효과 */
+/* Explore Archive 버튼 - 가독성을 높인 고급스러운 회색 톤 */
 .btn-outline {
     display: inline-block;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: #ffffff;
+    padding: 10px 25px; /* 버튼 크기를 살짝 확보 */
+    background: rgba(80, 80, 80, 0.6); /* 꽃밭 배경 위에서 잘 보이게 반투명 회색 추가 */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: 5px;
     transition: all 0.4s ease;
 }
 
 .btn-outline:hover {
-    background: rgba(200, 155, 60, 0.15); /* 은은한 골드빛 투명 배경 */
-    border-color: #C89B3C; /* 테두리는 메인 골드 색상으로 */
-    color: #C89B3C; /* 글씨도 골드로 은은하게 변경 */
-    box-shadow: 0 4px 15px rgba(200, 155, 60, 0.2); /* 미세한 후광 효과 */
-    transform: translateY(-2px); /* 살짝 떠오르는 고급스러운 느낌 */
+    background: rgba(200, 155, 60, 0.8); /* 마우스를 올리면 은은한 골드빛 배경으로 */
+    border-color: #C89B3C;
+    color: #ffffff !important; /* 글씨는 끝까지 흰색 유지 */
+    box-shadow: 0 4px 15px rgba(200, 155, 60, 0.4);
+    transform: translateY(-2px);
 }
 
 /* ================= SECTION ================= */
@@ -432,24 +435,32 @@ footer .container {
    상단 고정바 로고 이미지 스타일 조정
 ================================================= */
 
-/* 로고 컨테이너 (정렬 담당) */
+/* 1. 로고 컨테이너 (정렬 담당) */
 .logo a {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: white; /* 헤더가 어두우면 white, 밝으면 #111 */
 }
 
-/* 로고 이미지 크기 강제 고정 */
+/* 2. 로고 이미지 크기 강제 고정 */
 .logo-img {
     height: 35px !important;
     width: auto !important;
     margin-right: 10px;
 }
 
-/* 로고 옆 글자 스타일 */
-.logo span {
-    font-weight: 600;
-    font-size: 18px;
+/* 3. 로고 텍스트 및 메뉴 글자 통합 가독성 스타일 */
+.logo a span, 
+nav a {
+    color: #ffffff !important;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 700 !important;
+    font-size: 19px !important;
     letter-spacing: 0.5px;
 }
+
+/* 4. 마우스 올렸을 때만 골드 컬러 */
+nav a:hover {
+    color: #f1c40f !important;
+}
+
