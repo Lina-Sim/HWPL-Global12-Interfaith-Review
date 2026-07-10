@@ -396,38 +396,16 @@ h2 {
 
 .archive-grid {
 
-
     display:grid;
-
 
     grid-template-columns:
     repeat(5, 1fr);
 
+    gap:70px 35px;
 
-    gap:40px 25px;
-
-
-    padding:50px 40px 80px;
-
-
-    background:
-
-
-    linear-gradient(
-        90deg,
-        #765235,
-        #a27b4e,
-        #765235
-    );
-
-
-    box-shadow:
-
-    inset 0 0 40px rgba(0,0,0,.35);
-
+    position:relative;
 
 }
-
 
 
 .book {
@@ -436,7 +414,34 @@ h2 {
 
     position:relative;
 
+    padding-bottom:35px;
+
 }
+
+/* 책 아래 선반 */
+
+.book::after {
+
+    content:"";
+
+    position:absolute;
+
+    bottom:10px;
+
+    left:-10%;
+
+    width:120%;
+
+    height:8px;
+
+    background:#b08a55;
+
+    box-shadow:
+
+    0 8px 15px rgba(0,0,0,.25);
+
+}
+
 
 
 .book img {
@@ -448,7 +453,7 @@ h2 {
 
     box-shadow:
 
-    8px 15px 25px rgba(0,0,0,.35);
+    8px 15px 25px rgba(0,0,0,.25);
 
 
     transition:.3s;
