@@ -1,88 +1,65 @@
 document.addEventListener(
-    "DOMContentLoaded",
-    function(){
+"DOMContentLoaded",
+()=>{
 
 
-    const pageFlip =
-        new St.PageFlip(
-            document.getElementById("book"),
-            {
+const pageFlip =
+new St.PageFlip(
+document.getElementById("book"),
+{
 
 
-                width:600,
+width:600,
 
-                height:850,
-
-
-                size:"stretch",
+height:850,
 
 
-                minWidth:300,
-
-                maxWidth:1000,
+showCover:true,
 
 
-                minHeight:420,
-
-                maxHeight:1400,
+flippingTime:900,
 
 
-                showCover:true,
+usePortrait:true,
 
 
-                mobileScrollSupport:false,
+drawShadow:true,
 
 
-                flippingTime:900,
+maxShadowOpacity:0.5
 
 
-                usePortrait:true,
+});
 
 
-                drawShadow:true,
+const pages =
+document.querySelectorAll(".page");
 
 
-                maxShadowOpacity:0.5
-
-
-            }
-        );
+pageFlip.loadFromHTML(pages);
 
 
 
-    const pages =
-        document.querySelectorAll(".page");
+document
+.getElementById("prevBtn")
+.addEventListener(
+"click",
+()=>{
+
+pageFlip.flipPrev();
+
+});
 
 
+document
+.getElementById("nextBtn")
+.addEventListener(
+"click",
+()=>{
 
-    pageFlip.loadFromHTML(pages);
+pageFlip.flipNext();
 
-
-
-    document
-    .getElementById("prevBtn")
-    .addEventListener(
-        "click",
-        function(){
-
-            pageFlip.flipPrev();
-
-        }
-    );
-
-
-
-    document
-    .getElementById("nextBtn")
-    .addEventListener(
-        "click",
-        function(){
-
-            pageFlip.flipNext();
-
-        }
-    );
-
+});
 
 
 });
