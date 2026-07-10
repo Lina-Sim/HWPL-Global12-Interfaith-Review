@@ -110,7 +110,7 @@ nav a:hover {
 .btn-gold {
     background: #c9a227;
     color: white;
-    border: 1px solid #c9a227; /* 아웃라인 버튼과 크기를 완전히 똑같이 맞추기 위해 추가 */
+    border: 1px solid #c9a227;
 }
 
 .btn-gold:hover {
@@ -122,10 +122,11 @@ nav a:hover {
 
 /* 1. Explore Archive 버튼 기본 및 호버 효과 */
 .btn-outline {
+    display: inline-block;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.4);
     color: #ffffff;
-    transition: all 0.4s ease; /* 부드러운 전환 효과 */
+    transition: all 0.4s ease;
 }
 
 .btn-outline:hover {
@@ -136,23 +137,6 @@ nav a:hover {
     transform: translateY(-2px); /* 살짝 떠오르는 고급스러운 느낌 */
 }
 
-/* 2. Download PDF 버튼 마우스 호버 시 흰색 반전 효과 */
-.issue-buttons .btn-outline {
-    background: transparent;
-    border: 1px solid var(--navy); /* 기존 네이비 테두리 */
-    color: var(--navy);
-    transition: all 0.3s ease;
-}
-
-.issue-buttons .btn-outline:hover {
-    background: var(--navy); /* 배경이 네이비로 채워지거나 */
-    /* 만약 글자 배경 전체가 흰색으로 바뀌길 원하신다면 아래 주석을 해제하고 위 navy를 white로 바꾸셔도 됩니다! */
-    background: #ffffff; 
-    color: #111111; /* 글씨는 진하게 변함 */
-    border-color: #ffffff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-}
 /* ================= SECTION ================= */
 section {
     padding: 120px 0; /* 상하 여백을 조금 더 넓혀 시각적 답답함 해소 */
@@ -187,28 +171,19 @@ h2 {
     align-items: center;
 }
 
-/* [요청사항 3] 책자에 연하고 고급진 그림자 기본 세팅 */
 .latest-grid .cover img {
     width: 100%;
     max-width: 380px;
     display: block;
     margin: auto;
-    border-radius: 4px; /* 책 모서리를 아주 살짝 둥글게 하여 종이 질감 유도 */
-    
-    /* 대형 매거진에 쓰이는 고급스러운 소프트 더블 섀도우 */
-    box-shadow: 
-        0 15px 35px rgba(0, 0, 0, 0.07), 
-        0 5px 15px rgba(0, 0, 0, 0.05);
-    
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07), 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
-/* [요청사항 3] 책자를 선택(마우스 호버)하면 위로 살짝 떠오르는 효과 */
 .latest-grid .cover img:hover {
-    transform: translateY(-15px) scale(1.02); /* 위로 살짝 떠오르고 미세하게 확대 */
-    box-shadow: 
-        0 30px 60px rgba(0, 0, 0, 0.12), 
-        0 12px 25px rgba(0, 0, 0, 0.08); /* 공중에 떴을 때의 깊은 그림자 */
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12), 0 12px 25px rgba(0, 0, 0, 0.08);
 }
 
 .latest-info h3 {
@@ -218,10 +193,31 @@ h2 {
     color: #111;
 }
 
-/* [요청사항 1] 버튼이 엔터 한번 친 것처럼 더 밑으로 내려오도록 여백 추가 */
 .latest-info p {
     color: #555;
-    margin-bottom: 55px; /* 기존 30px -> 55px로 늘려서 버튼을 아래로 밀어냄 */
+    margin-bottom: 30px; /* 아래 .issue-buttons 여백 확보를 위해 기본값 유지 */
+}
+
+/* [교정 완료] 3번 요청: 최신 매거진 영역 안의 버튼 묶음 자체를 엔터 친 것처럼 아래로 툭 내림 */
+.latest-info .issue-buttons {
+    display: flex;
+    margin-top: 45px; /* 본문 글과 버튼들 사이에 시원한 여백 추가 */
+}
+
+/* [교정 완료] 2번 요청: Download PDF 버튼 기본 테두리를 블랙/네이비 톤으로 덮어씌움 */
+.latest-info .issue-buttons .btn-outline {
+    background: transparent !important;
+    border: 1px solid #111111 !important;
+    color: #111111 !important;
+}
+
+/* [교정 완료] 2번 요청: 마우스를 올렸을 때 완벽하게 고급진 흰색 반전 레이아웃 구현 */
+.latest-info .issue-buttons .btn-outline:hover {
+    background: #ffffff !important;
+    color: #111111 !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+    transform: translateY(-3px) !important;
 }
 
 .date {
@@ -235,7 +231,7 @@ h2 {
 .archive {
     background: #e8dfd0;
     position: relative;
-    padding: 120px 0 140px; /* 아래쪽 선반 여백 확보 */
+    padding: 120px 0 140px;
 }
 
 .archive::after {
@@ -254,7 +250,7 @@ h2 {
     grid-template-columns: repeat(5, 1fr);
     gap: 70px 35px;
     position: relative;
-    z-index: 2; /* 선반보다 책이 위로 올라오도록 명시 */
+    z-index: 2;
 }
 
 .book {
@@ -263,7 +259,6 @@ h2 {
     padding-bottom: 35px;
 }
 
-/* 책 아래 개별 선반 */
 .book::after {
     content: "";
     position: absolute;
@@ -282,7 +277,6 @@ h2 {
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
-/* 마우스 올렸을 때 책이 더 우아하게 올라가도록 변경 */
 .book img:hover {
     transform: translateY(-15px) scale(1.03);
     box-shadow: 12px 25px 35px rgba(0,0,0,.3);
@@ -290,7 +284,7 @@ h2 {
 
 .book h3 {
     margin-top: 25px;
-    color: #333; /* 브라운 배경 위에 흰색 글씨보단 딥한 컬러가 가독성이 좋습니다 */
+    color: #333;
     font-family: "Cormorant Garamond", serif;
     font-size: 22px;
     font-weight: 600;
@@ -299,7 +293,7 @@ h2 {
 /* ================= ABOUT ================= */
 .about {
     text-align: center;
-    background: #fff; /* 아카이브 구분을 위해 흰색 배경으로 분리 */
+    background: #fff;
 }
 
 .about p {
@@ -342,7 +336,7 @@ footer .container {
 /* ================= RESPONSIVE ================= */
 @media(max-width:1024px) {
     .archive-grid {
-        grid-template-columns: repeat(3, 1fr); /* 패드 스크린에서 아카이브 3열로 정렬 */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -359,7 +353,7 @@ footer .container {
         gap: 40px;
     }
     .archive-grid {
-        grid-template-columns: repeat(2, 1fr); /* 모바일에서는 2열로 정렬 */
+        grid-template-columns: repeat(2, 1fr);
     }
     nav {
         display: none;
@@ -369,11 +363,4 @@ footer .container {
         gap: 30px;
         text-align: center;
     }
-}
-/* =================================================
-   [수정] Contact us 섹션(.support) 상단 여백 추가
-================================================= */
-.support, .cta-section, #contact, .contact-section {
-    padding-top: 140px !important; /* 위쪽 여백을 시원하게 늘려줍니다 */
-    margin-top: 80px !important;  /* 섹션 자체를 아래로 툭 밀어내는 마진 */
 }
