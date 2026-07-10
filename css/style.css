@@ -101,13 +101,17 @@ nav a:hover {
     font-family: "Cormorant Garamond", serif;
     font-size: 90px;
     line-height: 1.1;
+    color: #ffffff; /* 흰색 글씨 */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* 번짐은 적고 또렷한 그림자 */
+    margin-bottom: 20px;
 }
 
 .hero-text {
     font-size: 24px;
     margin: 25px 0 45px;
     font-weight: 300;
-    color: #333333;
+    color: #ffffff; /* 배경이 꽃밭이라 흰색이 더 잘 보일 거예요 */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* 똑같이 선명한 그림자 적용 */
 }
 
 /* ================= BUTTON ================= */
