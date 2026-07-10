@@ -155,7 +155,6 @@ nav a:hover {
     box-shadow: 0 4px 15px rgba(200, 155, 60, 0.2);
     transform: translateY(-3px); /* btn-gold의 호버 효과와 동일하게 */
 }
-}
 
 /* ================= SECTION ================= */
 section {
