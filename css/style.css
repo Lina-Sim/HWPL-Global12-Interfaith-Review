@@ -1,622 +1,332 @@
 * {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
 
 body {
-
-    font-family:
-    "Inter",
-    "Noto Sans KR",
-    sans-serif;
-
-    background:#f7f5f0;
-
-    color:#222;
-
-    line-height:1.7;
-
+    font-family: "Inter", "Noto Sans KR", sans-serif;
+    background: #f7f5f0;
+    color: #222;
+    line-height: 1.7;
+    word-break: keep-all; /* 한글 줄바꿈이 단어 단위로 예쁘게 떨어지도록 설정 */
 }
-
 
 a {
-
-    text-decoration:none;
-
-    color:inherit;
-
+    text-decoration: none;
+    color: inherit;
 }
-
-
 
 .container {
-
-    width:90%;
-
-    max-width:1200px;
-
-    margin:auto;
-
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
 }
-
-
 
 /* ================= HEADER ================= */
-
-
 .header {
-
-    position:absolute;
-
-    top:0;
-
-    width:100%;
-
-    z-index:10;
-
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
-
-
 
 .header .container {
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:35px 0;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 0;
 }
-
-
 
 .logo {
-
-    font-family:
-    "Cormorant Garamond",
-    serif;
-
-    font-size:32px;
-
-    font-weight:700;
-
-    color:white;
-
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
 }
-
-
 
 nav a {
-
-    margin-left:35px;
-
-    color:white;
-
-    font-size:15px;
-
+    margin-left: 35px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    transition: color 0.3s;
 }
 
-
+nav a:hover {
+    color: white; /* 메뉴 호버 시 불투명하게 강조 */
+}
 
 /* ================= HERO ================= */
-
-
 .hero {
-
-    height:90vh;
-
-    min-height:700px;
-
-
-    background:
-
-    linear-gradient(
-        rgba(0,0,0,.45),
-        rgba(0,0,0,.65)
-    ),
-
-    url("../images/hero-bg.jpg");
-
-
-    background-size:cover;
-
-    background-position:center;
-
-
-    display:flex;
-
-    align-items:center;
-
+    height: 90vh;
+    min-height: 700px;
+    background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.65)), url("../images/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
 }
-
-
 
 .hero-content {
-
-    width:90%;
-
-    max-width:1200px;
-
-    margin:auto;
-
-    color:white;
-
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    color: white;
 }
-
-
 
 .eyebrow {
-
-    color:#d4af37;
-
-    letter-spacing:4px;
-
-    font-size:14px;
-
-    margin-bottom:20px;
-
+    color: #d4af37;
+    letter-spacing: 4px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
-
-
 
 .hero h1 {
-
-    font-family:
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:90px;
-
-    line-height:1.1;
-
+    font-family: "Cormorant Garamond", serif;
+    font-size: 90px;
+    line-height: 1.1;
 }
-
-
 
 .hero-text {
-
-    font-size:24px;
-
-    margin:25px 0 45px;
-
+    font-size: 24px;
+    margin: 25px 0 45px;
+    font-weight: 300;
 }
-
-
 
 /* ================= BUTTON ================= */
-
-
 .btn {
-
-    display:inline-block;
-
-    padding:14px 38px;
-
-    border-radius:40px;
-
-    margin-right:15px;
-
-    transition:.3s;
-
+    display: inline-block;
+    padding: 14px 38px;
+    border-radius: 40px;
+    margin-right: 15px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
-
-
 
 .btn-gold {
-
-    background:#c9a227;
-
-    color:white;
-
+    background: #c9a227;
+    color: white;
 }
-
-
 
 .btn-gold:hover {
-
-    background:#a88618;
-
+    background: #a88618;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(201, 162, 39, 0.3);
 }
-
-
 
 .btn-outline {
-
-    border:1px solid white;
-
-    color:white;
-
+    border: 1px solid white;
+    color: white;
 }
 
-
+.btn-outline:hover {
+    background: white;
+    color: #222;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
+}
 
 /* ================= SECTION ================= */
-
-
 section {
-
-    padding:100px 0;
-
+    padding: 120px 0; /* 상하 여백을 조금 더 넓혀 시각적 답답함 해소 */
 }
-
-
 
 .section-header {
-
-    text-align:center;
-
-    margin-bottom:60px;
-
+    text-align: center;
+    margin-bottom: 70px;
 }
-
-
 
 .section-subtitle {
-
-    color:#b08a20;
-
-    letter-spacing:3px;
-
-    font-size:14px;
-
+    color: #b08a20;
+    letter-spacing: 3px;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
 }
-
-
 
 h2 {
-
-    font-family:
-    "Cormorant Garamond",
-    serif;
-
-    font-size:55px;
-
-    font-weight:600;
-
+    font-family: "Cormorant Garamond", serif;
+    font-size: 55px;
+    font-weight: 600;
+    color: #111;
 }
-
-
 
 /* ================= LATEST ISSUE ================= */
-
-
 .latest-grid {
-
-    display:grid;
-
-    grid-template-columns:
-    420px 1fr;
-
-
-    gap:80px;
-
-    align-items:center;
-
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 80px;
+    align-items: center;
 }
-
-
 
 .latest-grid .cover img {
-
-
-    width:100%;
-
-    max-width:380px;
-
-
-    display:block;
-
-    margin:auto;
-
-
-    box-shadow:
-
-    0 25px 50px rgba(0,0,0,.15);
-
+    width: 100%;
+    max-width: 380px;
+    display: block;
+    margin: auto;
+    /* ChatGPT의 피드백을 반영한 한층 입체적이고 세련된 더블 섀도우 효과 */
+    box-shadow: 0 40px 80px rgba(0,0,0,.18), 0 12px 18px rgba(0,0,0,.08);
 }
-
-
 
 .latest-info h3 {
-
-
-    font-family:
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:40px;
-
-    margin:15px 0;
-
-
+    font-family: "Cormorant Garamond", serif;
+    font-size: 40px;
+    margin: 15px 0;
+    color: #111;
 }
-
-
 
 .latest-info p {
-
-    color:#555;
-
+    color: #555;
+    margin-bottom: 30px;
 }
-
-
 
 .date {
-
-    color:#b08a20;
-
+    color: #b08a20;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
-
-
 /* ================= ARCHIVE ================= */
-
-
 .archive {
-
-    background:#e8dfd0;
-
-    position:relative;
-
-    padding:120px 0;
-
+    background: #e8dfd0;
+    position: relative;
+    padding: 120px 0 140px; /* 아래쪽 선반 여백 확보 */
 }
 
 .archive::after {
-
-    content:"";
-
-    position:absolute;
-
-    bottom:35px;
-
-    left:5%;
-
-    width:90%;
-
-    height:18px;
-
-
-    background:#6b4728;
-
-
-    box-shadow:
-
-    0 8px 20px rgba(0,0,0,.3);
-
+    content: "";
+    position: absolute;
+    bottom: 45px;
+    left: 5%;
+    width: 90%;
+    height: 18px;
+    background: #6b4728;
+    box-shadow: 0 8px 20px rgba(0,0,0,.3);
 }
-
-
 
 .archive-grid {
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(5, 1fr);
-
-    gap:70px 35px;
-
-    position:relative;
-
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 70px 35px;
+    position: relative;
+    z-index: 2; /* 선반보다 책이 위로 올라오도록 명시 */
 }
-
 
 .book {
-
-    text-align:center;
-
-    position:relative;
-
-    padding-bottom:35px;
-
+    text-align: center;
+    position: relative;
+    padding-bottom: 35px;
 }
 
-/* 책 아래 선반 */
-
+/* 책 아래 개별 선반 */
 .book::after {
-
-    content:"";
-
-    position:absolute;
-
-    bottom:10px;
-
-    left:-10%;
-
-    width:120%;
-
-    height:8px;
-
-    background:#b08a55;
-
-    box-shadow:
-
-    0 8px 15px rgba(0,0,0,.25);
-
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: -10%;
+    width: 120%;
+    height: 8px;
+    background: #b08a55;
+    box-shadow: 0 8px 15px rgba(0,0,0,.25);
 }
-
-
 
 .book img {
-
-
-    width:100%;
-
-    max-width:180px;
-
-    box-shadow:
-
-    8px 15px 25px rgba(0,0,0,.25);
-
-
-    transition:.3s;
-
+    width: 100%;
+    max-width: 180px;
+    box-shadow: 8px 15px 25px rgba(0,0,0,.25);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
-
-
+/* 마우스 올렸을 때 책이 더 우아하게 올라가도록 변경 */
 .book img:hover {
-
-
-    transform:
-
-    translateY(-10px);
-
-
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 12px 25px 35px rgba(0,0,0,.3);
 }
-
-
 
 .book h3 {
-
-
-    margin-top:20px;
-
-
-    color:white;
-
-
-    font-family:
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:28px;
-
+    margin-top: 25px;
+    color: #333; /* 브라운 배경 위에 흰색 글씨보단 딥한 컬러가 가독성이 좋습니다 */
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    font-weight: 600;
 }
-
-
 
 /* ================= ABOUT ================= */
-
-
 .about {
-
-    text-align:center;
-
+    text-align: center;
+    background: #fff; /* 아카이브 구분을 위해 흰색 배경으로 분리 */
 }
-
-
 
 .about p {
-
-    max-width:750px;
-
-    margin:30px auto;
-
-    color:#555;
-
+    max-width: 750px;
+    margin: 30px auto;
+    color: #555;
+    font-size: 17px;
 }
-
-
 
 /* ================= SUPPORT ================= */
-
-
 .support {
-
-
-    text-align:center;
-
-    background:#1b1b1b;
-
-    color:white;
-
-
+    text-align: center;
+    background: #1b1b1b;
+    color: white;
 }
-
-
 
 .support h2 {
-
-    color:white;
-
+    color: white;
 }
-
-
 
 /* ================= FOOTER ================= */
-
-
 footer {
-
-
-    background:#111;
-
-    color:white;
-
-    padding:60px 0;
-
-
+    background: #111;
+    color: white;
+    padding: 60px 0;
 }
-
-
 
 footer .container {
-
-
-    display:flex;
-
-    justify-content:space-between;
-
+    display: flex;
+    justify-content: space-between;
 }
-
-
 
 .copyright {
-
-
-    text-align:center;
-
-    margin-top:40px;
-
-    color:#999;
-
+    text-align: center;
+    margin-top: 40px;
+    color: #777;
+    font-size: 13px;
 }
 
+/* ================= RESPONSIVE ================= */
+@media(max-width:1024px) {
+    .archive-grid {
+        grid-template-columns: repeat(3, 1fr); /* 패드 스크린에서 아카이브 3열로 정렬 */
+    }
+}
 
-
-
-@media(max-width:768px){
-
-
+@media(max-width: 768px) {
     .hero h1 {
-
-        font-size:55px;
-
+        font-size: 55px;
     }
-
-
+    .hero-text {
+        font-size: 18px;
+    }
     .latest-grid {
-
-        grid-template-columns:1fr;
-
-        text-align:center;
-
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
     }
-
-
+    .archive-grid {
+        grid-template-columns: repeat(2, 1fr); /* 모바일에서는 2열로 정렬 */
+    }
     nav {
-
-        display:none;
-
+        display: none;
     }
-
-
     footer .container {
-
-        flex-direction:column;
-
-        gap:30px;
-
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
     }
-
-
 }

@@ -1,282 +1,160 @@
 * {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
 
 body {
-
-    width:100%;
-    height:100vh;
-
-    background:#080808;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
-    font-family:
-    "Noto Sans KR",
-    sans-serif;
-
+    width: 100%;
+    height: 100vh;
+    background: #080808;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: "Noto Sans KR", sans-serif;
 }
-
-
 
 .viewer-container {
-
-    position:relative;
-
-    width:90vw;
-
-    height:90vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-
-    background:
-
-    radial-gradient(
-        circle,
-        #333 0%,
-        #111 55%,
-        #050505 100%
-    );
-
+    position: relative;
+    width: 100vw; /* 90vw에서 100vw로 넓혀 전체 화면을 웅장하게 사용 */
+    height: 100vh; /* 90vh에서 100vh로 변경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #2a2a2a 0%, #111111 60%, #050505 100%);
 }
 
-
-
+/* JS 및 HTML 설정값(700x990)과 100% 일치하도록 수정 */
 #book {
-
-    position:relative;
-
-    width:600px;
-
-    height:850px;
-
-
-    filter:
-
-    drop-shadow(
-        0 20px 40px rgba(0,0,0,.6)
-    );
-
+    position: relative;
+    width: 700px;
+    height: 990px;
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.8));
 }
-
-
 
 .page {
-
-    width:100%;
-
-    height:100%;
-
-    background:white;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
-
-
 
 .page img {
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:contain;
-
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 원본 비율을 유지하며 꽉 차게 */
 }
-
-
 
 .cover img {
-
-    object-fit:cover;
-
+    object-fit: cover;
 }
 
-
-
-/* 좌우 버튼 */
-
-
+/* 좌우 컨트롤 버튼 영역 설정 */
 .controls {
-
-    position:absolute;
-
-    width:100%;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    pointer-events:none;
-
+    position: absolute;
+    width: 100%;
+    max-width: 1200px; /* 너무 벌어지지 않도록 최대폭 제한 */
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    pointer-events: none;
+    z-index: 40; /* 호버존보다 위에 오도록 조정 */
 }
-
-
 
 .controls button {
-
-    pointer-events:auto;
-
-    width:50px;
-
-    height:80px;
-
-    border:none;
-
-    background:
-    rgba(255,255,255,.15);
-
-    color:white;
-
-    font-size:40px;
-
-    cursor:pointer;
-
+    pointer-events: auto;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%; /* 사각형에서 동그란 미니멀 버튼으로 변경하여 고급스러움 강조 */
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); /* 뒤 배경이 살짝 흐려지는 고급 효과 */
+    transition: all 0.3s;
 }
-
-
 
 .controls button:hover {
-
-    background:
-    rgba(255,255,255,.35);
-
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
 }
 
-
-
-/* Library 버튼 */
-
-
+/* Library 돌아가기 버튼 */
 .library-btn {
-
-    position:absolute;
-
-    bottom:30px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:10px 25px;
-
-    border:1px solid rgba(255,255,255,.5);
-
-    border-radius:30px;
-
-    background:
-    rgba(255,255,255,.08);
-
-    z-index:30;
-
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    padding: 12px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 14px;
+    letter-spacing: 1px;
+    z-index: 50;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s;
 }
-
-
 
 .library-btn:hover {
-
-    background:
-    rgba(255,255,255,.25);
-
+    background: white;
+    color: #111;
+    border-color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-
-
-/* hover 방향 */
-
-
+/* 마우스 호버 넘김 안내 영역 (선택사항) */
 .hover-zone {
-
-    position:absolute;
-
-    top:0;
-
-    width:50%;
-
-    height:100%;
-
-    display:flex;
-
-    align-items:center;
-
-    opacity:0;
-
-    color:white;
-
-    font-size:60px;
-
-    transition:.3s;
-
-    z-index:10;
-
-    pointer-events:auto;
-
-
+    position: absolute;
+    top: 0;
+    width: 30%; /* 50%에서 30%로 줄여 본문 읽을 때 거슬리지 않게 조절 */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    color: white;
+    font-size: 40px;
+    transition: .3s;
+    z-index: 20;
+    pointer-events: auto;
+    cursor: pointer;
 }
-
-
 
 .left-zone {
-
-    left:0;
-
-    justify-content:flex-start;
-
+    left: 0;
+    justify-content: flex-start;
+    padding-left: 20px;
+    background: linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0));
 }
-
-
 
 .right-zone {
-
-    right:0;
-
-    justify-content:flex-end;
-
+    right: 0;
+    justify-content: flex-end;
+    padding-right: 20px;
+    background: linear-gradient(to left, rgba(0,0,0,0.2), rgba(0,0,0,0));
 }
-
-
 
 .hover-zone:hover {
-
-    opacity:.7;
-
+    opacity: 0.6;
 }
 
-
-
-@media(max-width:768px){
-
+/* 모바일 반응형 조정 */
+@media(max-width: 768px) {
     #book {
-
-        width:90vw;
-
-        height:127vw;
-
+        width: 90vw;
+        height: 127vw; /* 모바일에서도 비율이 깨지지 않도록 자동 스케일 */
     }
-
+    .controls {
+        display: none; /* 모바일은 스와이프로 넘기므로 버튼 숨김 */
+    }
 }
