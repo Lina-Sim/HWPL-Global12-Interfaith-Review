@@ -25,18 +25,16 @@ a {
 
 /* ================= HEADER ================= */
 .header {
-    position: fixed; 
-    top: 0;
     width: 100%;
-    z-index: 100; 
-    /* [교정] 어두운 그라데이션을 걷어내고, 아주 투명하고 맑은 흰색 유리 필터를 입힙니다 */
-    background: rgba(255, 255, 255, 0.15) !important; 
-    /* 뒤의 배경이 은은하게 비치면서 글자가 겹쳐도 답답하지 않게 블러 처리만 고급스럽게 유지 */
-    backdrop-filter: blur(8px) !important; 
-    -webkit-backdrop-filter: blur(8px);
-    /* 아래에 아주 미세하게 경계선만 주어 맑은 유리판 같은 입체감을 부여합니다 */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
-    transition: all 0.3s ease;
+    /* 상단 고정 */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95); /* 배경색을 살짝 흰색으로 */
+    
+    /* 💡 이 부분이 그림자 번짐을 조절하는 핵심입니다 */
+    /* 아래 숫자를 조정해 보세요: 0 2px 5px rgba(0,0,0,0.1) -> 그림자를 훨씬 옅게 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); 
 }
 
 .header .container {
@@ -101,17 +99,17 @@ nav a:hover {
     font-family: "Cormorant Garamond", serif;
     font-size: 90px;
     line-height: 1.1;
-    color: #ffffff; /* 흰색 글씨 */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* 번짐은 적고 또렷한 그림자 */
+    color: #ffffff;
     margin-bottom: 20px;
+    text-shadow: none; /* 그림자 제거 */
 }
 
 .hero-text {
     font-size: 24px;
     margin: 25px 0 45px;
     font-weight: 300;
-    color: #ffffff; /* 배경이 꽃밭이라 흰색이 더 잘 보일 거예요 */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* 똑같이 선명한 그림자 적용 */
+    color: #ffffff;
+    text-shadow: none; /* 그림자 제거 */
 }
 
 /* ================= BUTTON ================= */
