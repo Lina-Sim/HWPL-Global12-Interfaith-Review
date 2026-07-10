@@ -120,7 +120,7 @@ nav a:hover {
     box-shadow: 0 10px 20px rgba(201, 162, 39, 0.3);
 }
 
-/* 1. Explore Archive 버튼 기본 및 호버 효과 */
+/* Explore Archive 버튼 기본 및 호버 효과 */
 .btn-outline {
     display: inline-block;
     background: transparent;
@@ -193,15 +193,13 @@ h2 {
     color: #111;
 }
 
+/* 본문 글 아래 여백을 확실하게 주어 버튼들을 아래로 시원하게 밀어냅니다 */
 .latest-info p {
     color: #555;
-    margin-bottom: 30px; /* 아래 .issue-buttons 여백 확보를 위해 기본값 유지 */
+    margin-bottom: 50px !important; 
 }
 
-/* =================================================
-   2번 교정: Download PDF 버튼을 하얀색 반전 버튼으로 완벽 변경
-================================================= */
-/* 텍스트 형태였던 Download PDF를 다른 버튼과 똑같은 세련된 버튼 모양으로 만듭니다 */
+/* Download PDF 버튼 기본 스타일 설정 */
 .latest-info a[href*="pdf"] {
     display: inline-block;
     padding: 14px 38px;
@@ -216,22 +214,19 @@ h2 {
     cursor: pointer;
 }
 
-/* 마우스를 올렸을 때 완벽하게 고급진 흰색 반전 효과와 그림자 부여 */
+/* Download PDF 마우스 올렸을 때 흰색 반전 효과 */
 .latest-info a[href*="pdf"]:hover {
-    background-color: #ffffff !important;   /* 배경 흰색 */
-    color: #111111 !important;              /* 글자 진한 차콜 */
-    border-color: #ffffff !important;        /* 테두리 투명하게 삭제 */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important; /* 소프트 그림자 */
-    transform: translateY(-3px) !important;  /* 위로 살짝 떠오름 */
+    background-color: #ffffff !important;   
+    color: #111111 !important;              
+    border-color: #ffffff !important;        
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important; 
+    transform: translateY(-3px) !important;  
 }
 
-/* =================================================
-   3번 교정: 본문 글 아래로 버튼 그룹을 엔터 친 것처럼 아래로 내리기
-================================================= */
-/* Read Online 버튼과 Download PDF 버튼 둘 다 본문 글씨와 너무 붙지 않게 위쪽 여백을 줍니다 */
+/* 두 버튼이 본문 글씨와 너무 붙지 않게 상단 여백 추가 */
 .latest-info .btn-gold,
 .latest-info a[href*="pdf"] {
-    margin-top: 40px !important; /* 버튼들 윗공간에 시원하게 엔터 친 만큼의 여백 추가 */
+    margin-top: 40px !important; 
 }
 
 
@@ -239,69 +234,83 @@ h2 {
 .archive {
     background: #e8dfd0;
     position: relative;
-    padding: 120px 0 160px; /* 아래쪽 통합 선반과 여백 조절 */
-}
-
-/* [교정] 1. 책이 없어도 항상 쭉 그어져 있는 고급스러운 원목 통 선반 */
-.archive::after {
-    content: "";
-    position: absolute;
-    bottom: 95px; /* 책들이 놓이는 그리드 바닥 위치에 정확히 맞춤 */
-    left: 5%;
-    width: 90%;
-    height: 14px; /* 너무 투박하지 않은 세련된 두께 */
-    background: #5c3a21; /* 고급스러운 다크 월넛 원목 색상 */
-    border-radius: 4px;
-    /* 선반 아래로 부드럽게 떨어지는 리얼한 음영 그림자 */
-    box-shadow: 
-        0 8px 15px rgba(0, 0, 0, 0.2),
-        0 2px 4px rgba(0, 0, 0, 0.15);
-    z-index: 1;
+    padding: 120px 0 140px; 
 }
 
 .archive-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 70px 35px;
+    gap: 80px 35px; /* 선반 간격 확보 */
     position: relative;
-    z-index: 2; /* 선반보다 책이 위로 올라오도록 설정 */
+    z-index: 2;
 }
 
 .book {
     text-align: center;
     position: relative;
-    /* [교정] 2. 기존 개별 책마다 생기던 황토색 얇은 선반(.book::after) 공간 확보용 패딩 제거 */
-    padding-bottom: 0; 
+    padding-bottom: 30px; 
 }
 
-/* [교정] 3. 어색했던 책별 개별 황토색 선반은 완전히 삭제합니다 */
+/* 옆 책의 선반과 완벽하게 이어지는 다크 월넛 통원목 선반 효과 */
 .book::after {
-    display: none !important; 
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -18px;   
+    right: -18px;
+    height: 12px;  
+    background: #5c3a21; 
+    border-radius: 2px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
+    z-index: -1;
 }
 
 .book img {
     width: 100%;
     max-width: 180px;
-    /* 책이 선반 위에 자연스럽게 얹혀 있는 듯한 서재 느낌의 그림자 */
-    box-shadow: 
-        5px 10px 20px rgba(0, 0, 0, 0.15),
-        2px 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-    vertical-align: bottom; /* 이미지 하단 공백 방지 */
+    vertical-align: bottom;
 }
 
-/* 마우스 올렸을 때 책이 더 우아하게 올라가도록 변경 */
 .book img:hover {
     transform: translateY(-15px) scale(1.03);
     box-shadow: 10px 25px 30px rgba(0, 0, 0, 0.25);
 }
 
 .book h3 {
-    margin-top: 20px;
+    margin-top: 25px; 
     color: #333;
     font-family: "Cormorant Garamond", serif;
     font-size: 22px;
     font-weight: 600;
+}
+
+/* 아카이브 더보기 버튼 랩퍼 & 스타일 */
+.archive-more-wrap {
+    text-align: center;
+    margin-top: 60px;
+    position: relative;
+    z-index: 3;
+}
+
+.btn-archive-more {
+    display: inline-block;
+    padding: 12px 35px;
+    border: 1px solid #5c3a21;
+    color: #5c3a21;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-archive-more:hover {
+    background: #5c3a21;
+    color: #e8dfd0;
+    box-shadow: 0 5px 15px rgba(92, 58, 33, 0.3);
+    transform: translateY(-2px);
 }
 
 
