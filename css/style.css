@@ -426,3 +426,19 @@ footer .container {
     margin-top: 5px;
     letter-spacing: 0.5px;
 }
+
+/* =================================================
+   상단 고정바 로고 이미지 스타일 조정
+================================================= */
+.logo-img {
+    height: 32px; /* 💡 상단바 높이에 맞춰 로고 세로 크기를 32px로 제한합니다 */
+    width: auto;  /* 세로 크기에 맞춰 가로 비율은 자동으로 유지 */
+    display: block;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* 마우스를 올렸을 때 살짝 반응하는 효과 */
+.logo-img:hover {
+    transform: scale(1.03); 
+}
