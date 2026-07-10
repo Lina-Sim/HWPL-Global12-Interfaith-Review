@@ -198,26 +198,34 @@ h2 {
     margin-bottom: 30px; /* 아래 .issue-buttons 여백 확보를 위해 기본값 유지 */
 }
 
-/* [교정 완료] 3번 요청: 최신 매거진 영역 안의 버튼 묶음 자체를 엔터 친 것처럼 아래로 툭 내림 */
-.latest-info .issue-buttons {
-    display: flex;
-    margin-top: 45px; /* 본문 글과 버튼들 사이에 시원한 여백 추가 */
-}
-
-/* [교정 완료] 2번 요청: Download PDF 버튼 기본 테두리를 블랙/네이비 톤으로 덮어씌움 */
-.latest-info .issue-buttons .btn-outline {
+/* =================================================
+   2번 수정: Download PDF 버튼 마우스 호버 시 완벽한 흰색 반전 효과
+================================================= */
+/* [기본 상태] 검은색 글씨와 검은색 테두리 */
+.latest-info .btn-outline {
     background: transparent !important;
     border: 1px solid #111111 !important;
     color: #111111 !important;
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
 
-/* [교정 완료] 2번 요청: 마우스를 올렸을 때 완벽하게 고급진 흰색 반전 레이아웃 구현 */
-.latest-info .issue-buttons .btn-outline:hover {
-    background: #ffffff !important;
-    color: #111111 !important;
-    border-color: #ffffff !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
-    transform: translateY(-3px) !important;
+/* [마우스를 올렸을 때] 완벽하게 하얀색 배경으로 채워지고 글씨가 돋보이도록 강제 적용 */
+.latest-info .btn-outline:hover {
+    background-color: #ffffff !important;   /* 무조건 배경을 흰색으로 변경 */
+    color: #111111 !important;              /* 글자색은 선명한 차콜/블랙 유지 */
+    border-color: #ffffff !important;        /* 테두리를 흰색으로 바꿔서 투명하게 보이도록 처리 */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important; /* 은은하고 고급스러운 그림자 효과 */
+    transform: translateY(-3px) !important;  /* 부드럽게 위로 살짝 떠오르는 피드백 */
+}
+
+/* =================================================
+   3번 수정: 최신 매거진 영역 안의 버튼 위치 아래로 내리기 (엔터 효과)
+================================================= */
+/* 버튼을 감싸는 부모 태그 영역에 마진을 주어 본문 글 아래로 정확히 툭 떨어뜨립니다 */
+.latest-info .btn-gold, 
+.latest-info .btn-outline {
+    margin-top: 35px !important; /* 버튼들 위쪽에 넉넉하게 엔터 친 만큼의 공백을 추가 */
 }
 
 .date {
