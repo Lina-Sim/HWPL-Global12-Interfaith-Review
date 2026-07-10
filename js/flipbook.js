@@ -21,8 +21,8 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     );
 
-    // 2. viewer.html에 적어둔 실제 이미지들을 순서대로 로드 📚
-    pageFlip.loadFromImages(
+    // [버그 수정 완료] 이미지 목록을 하나의 대괄호 [ ] 로 감싸 배열 형태로 전달합니다! 📚
+    pageFlip.loadFromImages([
         "images/cover-vol01.png",
         "pages/vol01-page02.webp",
         "pages/vol01-page03.webp",
@@ -35,7 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
         "pages/vol01-page10.webp",
         "pages/vol01-page11.webp",
         "pages/vol01-page12.webp"
-    );
+    ]);
 
     /* =================================================
        3. 하단 화살표 버튼 클릭 이벤트 연결
@@ -50,7 +50,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     /* =================================================
        4. 양옆 터치/호버 영역(hover-zone) 클릭 이벤트 연결 💡
-       (화면 양옆 빈 공간을 눌러도 책이 슥 넘어가도록 만듭니다)
     ================================================= */
     const leftZone = document.querySelector(".left-zone");
     const rightZone = document.querySelector(".right-zone");
