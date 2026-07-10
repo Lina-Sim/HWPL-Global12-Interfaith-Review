@@ -388,3 +388,19 @@ footer .container {
         text-align: center;
     }
 }
+
+/* =================================================
+   준비 중인 책 표지 (Coming Soon) 고급 필터 효과
+================================================= */
+.coming-soon-cover {
+    /* 흑백 전환 + 밝기 살짝 낮춤 + 은은한 블러 처리 */
+    filter: grayscale(1) contrast(0.9) brightness(0.8) blur(1.5px);
+    opacity: 0.55;
+    cursor: not-allowed; /* 마우스를 올렸을 때 클릭 불가능한 아이콘으로 변경 */
+}
+
+/* 준비 중인 책은 마우스를 올려도 위로 붕 뜨지 않도록 고정 */
+.book:has(.coming-soon-cover):hover img {
+    transform: none !important;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
