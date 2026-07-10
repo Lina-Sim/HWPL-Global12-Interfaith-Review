@@ -1,0 +1,279 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body {
+
+    width:100%;
+    height:100vh;
+
+    background:#080808;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    font-family:
+    "Noto Sans KR",
+    sans-serif;
+
+}
+
+
+
+.viewer-container {
+
+    position:relative;
+
+    width:90vw;
+
+    height:90vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    background:
+
+    radial-gradient(
+        circle,
+        #333 0%,
+        #111 55%,
+        #050505 100%
+    );
+
+}
+
+
+
+#book {
+
+    position:relative;
+
+    width:600px;
+
+    height:850px;
+
+
+    filter:
+
+    drop-shadow(
+        0 20px 40px rgba(0,0,0,.6)
+    );
+
+}
+
+
+
+.page {
+
+    width:100%;
+
+    height:100%;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+
+
+.page img {
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+}
+
+
+
+.cover img {
+
+    object-fit:cover;
+
+}
+
+
+
+/* 좌우 버튼 */
+
+
+.controls {
+
+    position:absolute;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    pointer-events:none;
+
+}
+
+
+
+.controls button {
+
+    pointer-events:auto;
+
+    width:50px;
+
+    height:80px;
+
+    border:none;
+
+    background:
+    rgba(255,255,255,.15);
+
+    color:white;
+
+    font-size:40px;
+
+    cursor:pointer;
+
+}
+
+
+
+.controls button:hover {
+
+    background:
+    rgba(255,255,255,.35);
+
+}
+
+
+
+/* Library 버튼 */
+
+
+.library-btn {
+
+    position:absolute;
+
+    bottom:30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:10px 25px;
+
+    border:1px solid rgba(255,255,255,.5);
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    z-index:30;
+
+}
+
+
+
+.library-btn:hover {
+
+    background:
+    rgba(255,255,255,.25);
+
+}
+
+
+
+/* hover 방향 */
+
+
+.hover-zone {
+
+    position:absolute;
+
+    top:0;
+
+    width:50%;
+
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    opacity:0;
+
+    color:white;
+
+    font-size:60px;
+
+    transition:.3s;
+
+    z-index:10;
+
+}
+
+
+
+.left-zone {
+
+    left:0;
+
+    justify-content:flex-start;
+
+}
+
+
+
+.right-zone {
+
+    right:0;
+
+    justify-content:flex-end;
+
+}
+
+
+
+.hover-zone:hover {
+
+    opacity:.7;
+
+}
+
+
+
+@media(max-width:768px){
+
+    #book {
+
+        width:90vw;
+
+        height:127vw;
+
+    }
+
+}
