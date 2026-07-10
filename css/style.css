@@ -143,7 +143,7 @@ nav a:hover {
     border: 1px solid rgba(255, 255, 255, 0.5);
     color: #ffffff !important;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50px; /* Read Online 버튼과 같은 둥근 모양 */
     transition: all 0.4s ease;
 }
 
