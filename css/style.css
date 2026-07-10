@@ -1,38 +1,468 @@
-/* --- 기본 초기화 --- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: "Inter", "Noto Sans KR", sans-serif; background: #f7f5f0; color: #222; line-height: 1.7; word-break: keep-all; }
-a { text-decoration: none; color: inherit; }
-.container { width: 90%; max-width: 1200px; margin: auto; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* --- HEADER (깔끔한 화이트 테마) --- */
-.header { width: 100%; position: fixed; top: 0; z-index: 1000; background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-.header .container { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
-.logo a { display: flex; align-items: center; font-family: "Cormorant Garamond", serif; font-size: 24px; font-weight: 700; color: #111; }
-.logo-img { height: 35px; margin-right: 10px; }
-nav a { margin-left: 30px; color: #333; font-size: 15px; font-weight: 500; transition: 0.3s; }
-nav a:hover { color: #c9a227; }
+body {
+    font-family: "Inter", "Noto Sans KR", sans-serif;
+    background: #f7f5f0;
+    color: #222;
+    line-height: 1.7;
+    word-break: keep-all; /* 한글 줄바꿈이 단어 단위로 예쁘게 떨어지도록 설정 */
+}
 
-/* --- HERO --- */
-.hero { height: 90vh; min-height: 700px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../images/hero-bg.jpg"); background-size: cover; background-position: center; display: flex; align-items: center; padding: 0 50px; }
-.hero-content { max-width: 800px; margin: 0 auto; width: 100%; text-align: center; }
-.hero h1 { font-family: "Cormorant Garamond", serif; font-size: 80px; color: #fff; margin-bottom: 20px; }
-.hero-text { font-size: 22px; color: #fff; margin-bottom: 40px; }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-/* --- BUTTONS --- */
-.btn { display: inline-block; padding: 14px 38px; border-radius: 40px; font-weight: 500; transition: 0.3s; }
-.btn-gold { background: #c9a227; color: white; }
-.btn-outline { background: transparent; border: 1px solid rgba(255,255,255,0.5); color: white; }
-.btn-outline:hover { background: rgba(255,255,255,0.2); }
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
 
-/* --- ARCHIVE (책장 스타일) --- */
-.archive { background: #e8dfd0; padding: 100px 0; }
-.archive-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 40px; }
-.book { text-align: center; position: relative; padding-bottom: 20px; }
-.book::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 10px; background: #5c3a21; border-radius: 2px; z-index: 1; }
-.book img { width: 100%; height: 250px; object-fit: contain; background: #fcfcfc; border-radius: 4px; transition: 0.3s; }
-.book:hover img { transform: translateY(-10px); }
-.book h3 { margin-top: 15px; font-family: "Cormorant Garamond", serif; font-size: 18px; }
+/* ================= HEADER ================= */
+.header {
+    width: 100%;
+    /* 상단 고정 */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95); /* 배경색을 살짝 흰색으로 */
+    
+    /* 💡 이 부분이 그림자 번짐을 조절하는 핵심입니다 */
+    /* 아래 숫자를 조정해 보세요: 0 2px 5px rgba(0,0,0,0.1) -> 그림자를 훨씬 옅게 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); 
+}
 
-/* --- RESPONSIVE --- */
-@media(max-width: 1024px) { .archive-grid { grid-template-columns: repeat(3, 1fr); } }
-@media(max-width: 768px) { .hero h1 { font-size: 50px; } .archive-grid { grid-template-columns: repeat(2, 1fr); } nav { display: none; } }
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0; 
+}
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px; 
+    font-weight: 700;
+    color: white; /* 어두운 메인 이미지 위에서는 화사하게 빛납니다 */
+    letter-spacing: 1px;
+}
+
+nav a {
+    margin-left: 35px;
+    /* [교정] 어두운 배경이 사라졌으므로 메뉴 글자색을 더 뚜렷하고 맑은 화이트로 조정 */
+    color: rgba(255, 255, 255, 0.95) !important; 
+    font-size: 15px;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 흰 글씨가 배경에 묻히지 않도록 미세한 음영 추가 */
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    color: #c9a227 !important; /* 호버 시 세련된 골드 칼라 포인트 */
+}
+
+/* ================= HERO ================= */
+.hero {
+    height: 90vh;
+    min-height: 700px;
+    /* [교정] 눈부심 방지: rgba(255, 255, 255, 0.4)로 흰색 필터를 조금 더 진하게 깔아 화사하지만 눈은 편안하게 */
+    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(232, 223, 208, 0.5)), url("../images/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    /* 여백 확보를 위해 추가 */
+    padding: 0 50px; 
+}
+
+/* Hero 내부 콘텐츠 정렬 */
+.hero-content {
+    max-width: 800px; /* 글자가 너무 옆으로 퍼지지 않게 제한 */
+    margin: 0 auto;   /* 중앙 정렬 */
+    width: 100%;
+}
+
+.eyebrow {
+    color: #d4af37;
+    letter-spacing: 4px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 90px;
+    line-height: 1.1;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: none; /* 그림자 제거 */
+}
+
+.hero-text {
+    font-size: 24px;
+    margin: 25px 0 45px;
+    font-weight: 300;
+    color: #ffffff;
+    text-shadow: none; /* 그림자 제거 */
+}
+
+/* ================= BUTTON ================= */
+.btn {
+    display: inline-block;
+    padding: 14px 38px;
+    border-radius: 40px;
+    margin-right: 15px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* 부드러운 애니메이션 효과 */
+}
+
+.btn-gold {
+    background: #c9a227;
+    color: white;
+    border: 1px solid #c9a227;
+}
+
+.btn-gold:hover {
+    background: #a88618;
+    border-color: #a88618;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(201, 162, 39, 0.3);
+}
+
+/* Explore Archive 버튼 (btn 클래스 속성을 그대로 사용하도록 수정) */
+.btn-outline {
+    /* btn 클래스의 기본 패딩을 따르기 위해 padding 삭제 */
+    background: rgba(255, 255, 255, 0.15); /* 좀 더 연한 반투명 색상 */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: 40px; /* btn과 동일한 둥근 모양 */
+    transition: all 0.4s ease;
+}
+
+.btn-outline:hover {
+    background: rgba(200, 155, 60, 0.6); /* 호버 시 더 연하고 고급스럽게 */
+    border-color: #C89B3C;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(200, 155, 60, 0.2);
+    transform: translateY(-3px); /* btn-gold의 호버 효과와 동일하게 */
+}
+}
+
+/* ================= SECTION ================= */
+section {
+    padding: 120px 0; /* 상하 여백을 조금 더 넓혀 시각적 답답함 해소 */
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 800px;
+}
+
+.section-subtitle {
+    color: #b08a20;
+    letter-spacing: 3px;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+}
+
+h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 55px;
+    font-weight: 600;
+    color: #111;
+}
+
+/* ================= LATEST ISSUE ================= */
+.latest-grid {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.latest-grid .cover img {
+    width: 100%;
+    max-width: 380px;
+    display: block;
+    margin: auto;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07), 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.latest-grid .cover img:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12), 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.latest-info h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 40px;
+    margin: 15px 0;
+    color: #111;
+}
+
+/* 본문 글 아래 여백을 확실하게 주어 버튼들을 아래로 시원하게 밀어냅니다 */
+.latest-info p {
+    color: #555;
+    margin-bottom: 50px !important; 
+}
+
+/* Download PDF 버튼 기본 스타일 설정 */
+.latest-info a[href*="pdf"] {
+    display: inline-block;
+    padding: 14px 38px;
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    background: transparent !important;
+    border: 1px solid #111111 !important;
+    color: #111111 !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    cursor: pointer;
+}
+
+/* Download PDF 마우스 올렸을 때 흰색 반전 효과 */
+.latest-info a[href*="pdf"]:hover {
+    background-color: #ffffff !important;   
+    color: #111111 !important;              
+    border-color: #ffffff !important;        
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important; 
+    transform: translateY(-3px) !important;  
+}
+
+/* 두 버튼이 본문 글씨와 너무 붙지 않게 상단 여백 추가 */
+.latest-info .btn-gold,
+.latest-info a[href*="pdf"] {
+    margin-top: 40px !important; 
+}
+
+
+/* ================= ARCHIVE ================= */
+.archive {
+    background: #e8dfd0;
+    position: relative;
+    padding: 120px 0 140px; 
+}
+
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 80px 35px; /* 선반 간격 확보 */
+    position: relative;
+    z-index: 2;
+}
+
+.book {
+    text-align: center;
+    position: relative;
+    padding-bottom: 30px; 
+}
+
+/* 옆 책의 선반과 완벽하게 이어지는 다크 월넛 통원목 선반 효과 */
+.book::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -18px;   
+    right: -18px;
+    height: 12px;  
+    background: #5c3a21; 
+    border-radius: 2px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
+    z-index: -1;
+}
+
+.book img {
+    width: 100%;
+    max-width: 180px;
+    height: 255px !important; 
+    /* cover 대신 contain을 쓰면 여백이 생기더라도 이미지 원본 화질을 찌그러트리지 않고 그대로 보여줍니다 */
+    object-fit: contain !important; 
+    background-color: #f7f4ee; /* 이미지가 작아서 생기는 빈 공간을 채워줄 우아한 배경색 */
+}
+
+.book img:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 10px 25px 30px rgba(0, 0, 0, 0.25);
+}
+
+.book h3 {
+    margin-top: 25px; 
+    color: #333;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* 아카이브 더보기 버튼 랩퍼 & 스타일 */
+.archive-more-wrap {
+    text-align: center;
+    margin-top: 60px;
+    position: relative;
+    z-index: 3;
+}
+
+.btn-archive-more {
+    display: inline-block;
+    padding: 12px 35px;
+    border: 1px solid #5c3a21;
+    color: #5c3a21;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-archive-more:hover {
+    background: #5c3a21;
+    color: #e8dfd0;
+    box-shadow: 0 5px 15px rgba(92, 58, 33, 0.3);
+    transform: translateY(-2px);
+}
+
+
+/* ================= ABOUT ================= */
+.about {
+    text-align: center;
+    background: #fff;
+}
+
+.about p {
+    max-width: 750px;
+    margin: 30px auto;
+    color: #555;
+    font-size: 17px;
+}
+
+/* ================= SUPPORT ================= */
+.support {
+    text-align: center;
+    background: #1b1b1b;
+    color: white;
+}
+
+.support h2 {
+    color: white;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #111;
+    color: white;
+    padding: 60px 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 40px;
+    color: #777;
+    font-size: 13px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:1024px) {
+    .archive-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width: 768px) {
+    .hero h1 {
+        font-size: 55px;
+    }
+    .hero-text {
+        font-size: 18px;
+    }
+    .latest-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    .archive-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    nav {
+        display: none;
+    }
+    footer .container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+}
+
+/* =================================================
+   준비 중인 책 (Volume 02) 은은한 투명도 및 스타일
+================================================= */
+/* 어두운 필터를 걷어내고 부드러운 투명도만 매끄럽게 부여 */
+.volume-coming-soon img {
+    opacity: 0.65;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 마우스를 올렸을 때도 압박감 없이 다른 책들처럼 자연스럽게 반응 */
+.volume-coming-soon:hover img {
+    opacity: 0.85; /* 마우스 올리면 은은하게 밝아짐 */
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* Coming Soon 글자 스타일 정돈 */
+.book .status-text {
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+
+/* =================================================
+   상단 고정바 로고 이미지 스타일 조정
+================================================= */
+
+/* 1. 로고 컨테이너 (정렬 담당) */
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* 2. 로고 이미지 크기 강제 고정 */
+.logo-img {
+    height: 35px !important;
+    width: auto !important;
+    margin-right: 10px;
+}
+
+/* 3. 로고 텍스트 및 메뉴 글자 통합 가독성 스타일 */
+.logo a span, 
+nav a {
+    color: #ffffff !important;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 700 !important;
+    font-size: 19px !important;
+    letter-spacing: 0.5px;
+}
+
+/* 4. 마우스 올렸을 때만 골드 컬러 */
+nav a:hover {
+    color: #f1c40f !important;
+}
+
