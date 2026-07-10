@@ -61,7 +61,7 @@ nav a:hover {
 .hero {
     height: 90vh;
     min-height: 700px;
-    background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.65)), url("../images/hero-bg.webp");
+    background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.65)), url("../images/hero-bg.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
