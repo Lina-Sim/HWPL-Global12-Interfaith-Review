@@ -164,7 +164,7 @@ section {
 
 .section-header {
     text-align: center;
-    margin-bottom: 800px;
+    margin-bottom: 70px;
 }
 
 .section-subtitle {
@@ -339,11 +339,12 @@ h2 {
 .about {
     text-align: center;
     background: #fff;
+    padding: 120px 0; /* 위아래 여백을 120px로 넓힘 */
 }
 
 .about p {
     max-width: 750px;
-    margin: 30px auto;
+    margin: 30px auto 10;
     color: #555;
     font-size: 17px;
 }
@@ -351,12 +352,14 @@ h2 {
 /* ================= SUPPORT ================= */
 .support {
     text-align: center;
-    background: #1b1b1b;
+    background: #555;
     color: white;
+    padding: 120px 0; /* ABOUT과 마찬가지로 시원하게 여백 추가 */
 }
 
 .support h2 {
     color: white;
+    margin-bottom: 20px; /* 제목과 아래 글 사이 여백 */
 }
 
 /* ================= FOOTER ================= */
