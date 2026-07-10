@@ -360,17 +360,35 @@ h2 {
 
 .archive {
 
-    background:
-
-    linear-gradient(
-        90deg,
-        #d8c7a5 0%,
-        #efe8dc 8%,
-        #efe8dc 92%,
-        #d8c7a5 100%
-    );
+    background:#eee7da;
 
     position:relative;
+
+    padding-bottom:140px;
+
+}
+
+.archive::after {
+
+    content:"";
+
+    position:absolute;
+
+    bottom:60px;
+
+    left:5%;
+
+    width:90%;
+
+    height:25px;
+
+
+    background:#8b6b3f;
+
+
+    box-shadow:
+
+    0 10px 20px rgba(0,0,0,.25);
 
 }
 
@@ -397,9 +415,9 @@ h2 {
 
 .book {
 
-    background:#f7f2e8;
+    text-align:center;
 
-    padding:25px;
+    position:relative;
 
     border-radius:4px;
 
@@ -412,11 +430,13 @@ h2 {
 
 .book img {
 
-    width:100%;
+    width:220px;
 
     box-shadow:
 
-    0 10px 20px rgba(0,0,0,.25);
+    10px 15px 25px rgba(0,0,0,.25);
+
+    transition:.3s;
 
 }
 
