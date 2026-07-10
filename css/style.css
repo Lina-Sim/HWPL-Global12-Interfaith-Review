@@ -235,24 +235,28 @@ h2 {
 }
 
 
-
-
 /* ================= ARCHIVE ================= */
 .archive {
     background: #e8dfd0;
     position: relative;
-    padding: 120px 0 140px;
+    padding: 120px 0 160px; /* 아래쪽 통합 선반과 여백 조절 */
 }
 
+/* [교정] 1. 책이 없어도 항상 쭉 그어져 있는 고급스러운 원목 통 선반 */
 .archive::after {
     content: "";
     position: absolute;
-    bottom: 45px;
+    bottom: 95px; /* 책들이 놓이는 그리드 바닥 위치에 정확히 맞춤 */
     left: 5%;
     width: 90%;
-    height: 18px;
-    background: #6b4728;
-    box-shadow: 0 8px 20px rgba(0,0,0,.3);
+    height: 14px; /* 너무 투박하지 않은 세련된 두께 */
+    background: #5c3a21; /* 고급스러운 다크 월넛 원목 색상 */
+    border-radius: 4px;
+    /* 선반 아래로 부드럽게 떨어지는 리얼한 음영 그림자 */
+    box-shadow: 
+        0 8px 15px rgba(0, 0, 0, 0.2),
+        0 2px 4px rgba(0, 0, 0, 0.15);
+    z-index: 1;
 }
 
 .archive-grid {
@@ -260,45 +264,46 @@ h2 {
     grid-template-columns: repeat(5, 1fr);
     gap: 70px 35px;
     position: relative;
-    z-index: 2;
+    z-index: 2; /* 선반보다 책이 위로 올라오도록 설정 */
 }
 
 .book {
     text-align: center;
     position: relative;
-    padding-bottom: 35px;
+    /* [교정] 2. 기존 개별 책마다 생기던 황토색 얇은 선반(.book::after) 공간 확보용 패딩 제거 */
+    padding-bottom: 0; 
 }
 
+/* [교정] 3. 어색했던 책별 개별 황토색 선반은 완전히 삭제합니다 */
 .book::after {
-    content: "";
-    position: absolute;
-    bottom: 10px;
-    left: -10%;
-    width: 120%;
-    height: 8px;
-    background: #b08a55;
-    box-shadow: 0 8px 15px rgba(0,0,0,.25);
+    display: none !important; 
 }
 
 .book img {
     width: 100%;
     max-width: 180px;
-    box-shadow: 8px 15px 25px rgba(0,0,0,.25);
+    /* 책이 선반 위에 자연스럽게 얹혀 있는 듯한 서재 느낌의 그림자 */
+    box-shadow: 
+        5px 10px 20px rgba(0, 0, 0, 0.15),
+        2px 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    vertical-align: bottom; /* 이미지 하단 공백 방지 */
 }
 
+/* 마우스 올렸을 때 책이 더 우아하게 올라가도록 변경 */
 .book img:hover {
     transform: translateY(-15px) scale(1.03);
-    box-shadow: 12px 25px 35px rgba(0,0,0,.3);
+    box-shadow: 10px 25px 30px rgba(0, 0, 0, 0.25);
 }
 
 .book h3 {
-    margin-top: 25px;
+    margin-top: 20px;
     color: #333;
     font-family: "Cormorant Garamond", serif;
     font-size: 22px;
     font-weight: 600;
 }
+
 
 /* ================= ABOUT ================= */
 .about {
