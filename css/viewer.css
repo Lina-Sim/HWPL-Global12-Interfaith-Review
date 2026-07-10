@@ -113,48 +113,98 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-/* 마우스 호버 넘김 안내 영역 (선택사항) */
+/* =================================================
+   [수정] 기존 .controls button (원형 버튼)은 완전히 삭제하고
+   .hover-zone만 남겨서 고급스럽게 통일합니다.
+================================================= */
+
+/* 좌우 마우스 반응 영역 (기본 상태에서는 완벽히 투명) */
 .hover-zone {
     position: absolute;
     top: 0;
-    width: 30%; /* 50%에서 30%로 줄여 본문 읽을 때 거슬리지 않게 조절 */
+    width: 30%; /* 본문을 가리지 않도록 30% 영역 설정 */
     height: 100%;
     display: flex;
     align-items: center;
     opacity: 0;
-    color: white;
-    font-size: 40px;
-    transition: .3s;
+    color: rgba(255, 255, 255, 0.7); /* 너무 쨍하지 않은 고급스러운 화이트 */
+    font-size: 50px; /* 화살표 크기 */
+    font-weight: 200; /* 화살표 라인을 얇고 슬림하게 처리하여 고급스러움 강조 */
+    transition: all 0.4s ease;
     z-index: 20;
     pointer-events: auto;
     cursor: pointer;
 }
 
+/* 왼쪽 영역: 마우스를 대면 은은한 어둠과 함께 < 모양 등장 */
 .left-zone {
     left: 0;
     justify-content: flex-start;
-    padding-left: 20px;
-    background: linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0));
+    padding-left: 30px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
 }
 
+/* 오른쪽 영역: 마우스를 대면 은은한 어둠과 함께 > 모양 등장 */
 .right-zone {
     right: 0;
     justify-content: flex-end;
-    padding-right: 20px;
-    background: linear-gradient(to left, rgba(0,0,0,0.2), rgba(0,0,0,0));
+    padding-right: 30px;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
 }
 
+/* 마우스를 올렸을 때 화살표가 스르륵 나타나는 효과 */
 .hover-zone:hover {
-    opacity: 0.6;
+    opacity: 1;
+}
+
+/* 화살표에 살짝 변화를 주는 효과 (선택사항) */
+.hover-zone:hover {
+    color: #white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.controls {
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+    z-index: 40;
+}
+/* 기존 .controls button 및 :hover 스타일은 깨끗하게 삭제하시면 됩니다! */
+
+
+/* Library 버튼 (기존 유지) */
+.library-btn {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    padding: 12px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 14px;
+    letter-spacing: 1px;
+    z-index: 50;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s;
+}
+
+.library-btn:hover {
+    background: white;
+    color: #111;
+    border-color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
 /* 모바일 반응형 조정 */
 @media(max-width: 768px) {
     #book {
         width: 90vw;
-        height: 127vw; /* 모바일에서도 비율이 깨지지 않도록 자동 스케일 */
+        height: 127vw;
     }
-    .controls {
-        display: none; /* 모바일은 스와이프로 넘기므로 버튼 숨김 */
+    .hover-zone {
+        display: none; /* 모바일은 터치로 넘기므로 숨김 */
     }
 }
