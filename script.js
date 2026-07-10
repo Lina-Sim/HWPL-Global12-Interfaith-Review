@@ -18,17 +18,17 @@ window.addEventListener("DOMContentLoaded", () => {
     // viewer.html의 이미지 리스트와 완벽 매칭 완료!
     pageFlip.loadFromImages([
         "images/cover-vol01.png",
-        "pages/vol01-page02.jpg",
-        "pages/vol01-page03.jpg",
-        "pages/vol01-page04.jpg",
-        "pages/vol01-page05.jpg",
-        "pages/vol01-page06.jpg",
-        "pages/vol01-page07.jpg",
-        "pages/vol01-page08.jpg",
-        "pages/vol01-page09.jpg",
-        "pages/vol01-page10.jpg",
-        "pages/vol01-page11.jpg",
-        "pages/vol01-page12.jpg"
+        "pages/vol01-page02.webp",
+        "pages/vol01-page03.webp",
+        "pages/vol01-page04.webp",
+        "pages/vol01-page05.webp",
+        "pages/vol01-page06.webp",
+        "pages/vol01-page07.webp",
+        "pages/vol01-page08.webp",
+        "pages/vol01-page09.webp",
+        "pages/vol01-page10.webp",
+        "pages/vol01-page11.webp",
+        "pages/vol01-page12.webp"
     ]);
 
     /* =================================================
