@@ -118,49 +118,46 @@ body {
    .hover-zone만 남겨서 고급스럽게 통일합니다.
 ================================================= */
 
-/* 좌우 마우스 반응 영역 (기본 상태에서는 완벽히 투명) */
+/* 좌우 마우스 반응 영역 */
 .hover-zone {
     position: absolute;
     top: 0;
-    width: 30%; /* 본문을 가리지 않도록 30% 영역 설정 */
+    width: 25%; /* 본문을 가리지 않도록 영역 설정 */
     height: 100%;
     display: flex;
     align-items: center;
     opacity: 0;
-    color: rgba(255, 255, 255, 0.7); /* 너무 쨍하지 않은 고급스러운 화이트 */
-    font-size: 50px; /* 화살표 크기 */
-    font-weight: 200; /* 화살표 라인을 얇고 슬림하게 처리하여 고급스러움 강조 */
-    transition: all 0.4s ease;
+    color: rgba(255, 255, 255, 0.55); /* 평소에는 살짝 흐릿하게 감춤 */
+    font-size: 45px; 
+    font-weight: 100; /* 라인을 더 얇고 미니멀하게 하여 고급스럽게 처리 */
+    transition: all 0.3s ease; /* 반응 속도를 살짝 더 빠르게 */
     z-index: 20;
     pointer-events: auto;
     cursor: pointer;
 }
 
-/* 왼쪽 영역: 마우스를 대면 은은한 어둠과 함께 < 모양 등장 */
+/* [수정] 왼쪽 영역: 그라데이션 폭을 좁히고 색상을 훨씬 연하게(0.3 -> 0.12) 조정 */
 .left-zone {
     left: 0;
     justify-content: flex-start;
-    padding-left: 30px;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+    padding-left: 25px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 40%); 
 }
 
-/* 오른쪽 영역: 마우스를 대면 은은한 어둠과 함께 > 모양 등장 */
+/* [수정] 오른쪽 영역: 그라데이션 폭을 좁히고 색상을 훨씬 연하게(0.3 -> 0.12) 조정 */
 .right-zone {
     right: 0;
     justify-content: flex-end;
-    padding-right: 30px;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+    padding-right: 25px;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 40%);
 }
 
-/* 마우스를 올렸을 때 화살표가 스르륵 나타나는 효과 */
+/* 마우스를 올렸을 때 효과 */
 .hover-zone:hover {
     opacity: 1;
-}
-
-/* 화살표에 살짝 변화를 주는 효과 (선택사항) */
-.hover-zone:hover {
-    color: #white;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.95); /* 마우스를 대면 화살표가 선명해짐 */
+    /* 화살표 글씨 자체에 아주 미세한 그림자를 주어 가독성 확보 */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
 }
 
 .controls {
