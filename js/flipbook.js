@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
         drawShadow: true,
         maxShadowOpacity: 0.4,
 
-        mobileScrollSupport: false
+        mobileScrollSupport: false,
         usePortrait: false
     };
 
