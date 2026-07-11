@@ -143,6 +143,7 @@ nav a:hover {
     display: flex;
     justify-content: center;
     gap: 15px; /* 두 버튼 사이의 간격 */
+    padding-right: 200px;    /* 오른쪽 패딩을 줘서 시각적으로 왼쪽으로 쏠리게 만듦 */
 }
 
 .btn-gold {
