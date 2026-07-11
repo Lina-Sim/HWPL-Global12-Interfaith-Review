@@ -34,7 +34,7 @@ a {
     
     /* 💡 이 부분이 그림자 번짐을 조절하는 핵심입니다 */
     /* 아래 숫자를 조정해 보세요: 0 2px 5px rgba(0,0,0,0.1) -> 그림자를 훨씬 옅게 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); 
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.01); 
 }
 
 .header .container {
