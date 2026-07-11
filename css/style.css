@@ -30,11 +30,12 @@ a {
     position: fixed;
     top: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.95); /* 배경색을 살짝 흰색으로 */
-    
-    /* x축 오프셋, y축 오프셋, blur 반경, 색상 */
-    /* 오른쪽(2px) 아래(4px) 방향으로 은은한 그림자 */
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  header {
+    /* 배경색을 흰색 그라데이션이나 반투명으로 수정 */
+    background: rgba(255, 255, 255, 0.8) !important; 
+    /* 그림자 조정 */
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.05) !important;
+    backdrop-filter: blur(10px); /* 유리 느낌을 주고 싶다면 추가 */
 }
 
 .header .container {
@@ -58,7 +59,8 @@ nav a {
     color: rgba(255, 255, 255, 0.95) !important; 
     font-size: 15px;
     font-weight: 500;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 흰 글씨가 배경에 묻히지 않도록 미세한 음영 추가 */
+    /* x축(오른쪽 1px), y축(아래 1px), blur(번짐 2px), 색상(투명도 0.1) */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
     transition: all 0.3s;
 }
 
