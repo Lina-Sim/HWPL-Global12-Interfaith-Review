@@ -1,11 +1,7 @@
 /* =================================================
-   1. 기본 설정 및 컨테이너
+   기본 초기화
 ================================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     width: 100%;
@@ -15,6 +11,9 @@ body {
     font-family: "Noto Sans KR", sans-serif;
 }
 
+/* =================================================
+   전체 컨테이너 (배경 및 중앙 정렬 담당)
+================================================= */
 .viewer-container {
     position: relative;
     width: 100vw;
@@ -26,12 +25,20 @@ body {
 }
 
 /* =================================================
-   2. 플립북 본체 (핵심 수정)
+   데스크탑 플립북 뷰어 (중앙 배치)
 ================================================= */
+#desktop-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #book {
-    width: 100%;       /* 컨테이너 너비에 맞춤 */
-    height: 90vh;      /* 화면 높이보다 살짝 작게 */
-    max-width: 1000px; /* 너무 커지지 않게 제한 */
+    width: 100%;
+    max-width: 1000px;
+    height: 90vh; /* 화면 높이의 90%로 고정하여 잘림 방지 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,15 +55,11 @@ body {
 .page img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* 왜곡 없이 꽉 차게 */
-}
-
-.cover img {
-    object-fit: cover;
+    object-fit: contain; /* 왜곡 없이 박스 안에 맞춤 */
 }
 
 /* =================================================
-   3. 컨트롤 및 UI 버튼
+   UI 요소 (버튼, 호버존, 돌아가기 버튼)
 ================================================= */
 .hover-zone {
     position: absolute;
@@ -68,7 +71,6 @@ body {
     opacity: 0;
     color: rgba(255, 255, 255, 0.55);
     font-size: 45px;
-    font-weight: 100;
     transition: all 0.3s ease;
     z-index: 20;
     pointer-events: auto;
@@ -90,7 +92,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 30px;
     background: rgba(255, 255, 255, 0.05);
-    font-size: 14px;
     z-index: 50;
     backdrop-filter: blur(5px);
     transition: all 0.3s;
@@ -99,15 +100,20 @@ body {
 .library-btn:hover { background: white; color: #111; }
 
 /* =================================================
-   4. 반응형 및 PDF 뷰어
+   모바일 반응형 및 PDF 뷰어
 ================================================= */
-@media(max-width: 768px) {
-    .viewer-container { padding: 12px; }
-    .hover-zone { display: none; }
-    
-    #desktop-view { display: none; }
-    #mobile-cview { display: block; width: 100%; height: 100vh; }
-}
+#mobile-cview { display: none; }
 
-#mobile-cview { display: none; width: 100%; height: 100vh; }
-#mobile-cview iframe { width: 100%; height: 100%; border: none; }
+@media(max-width: 768px) {
+    #desktop-view { display: none; }
+    #mobile-cview {
+        display: block;
+        width: 100%;
+        height: 100vh;
+    }
+    #mobile-cview iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
