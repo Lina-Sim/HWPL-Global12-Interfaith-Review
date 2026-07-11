@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth; /* 부드러운 스크롤 */
+    scroll-snap-type: y mandatory; /* Y축 스크롤을 강제로 스냅시킴 */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -184,7 +189,19 @@ nav a:hover {
 
 /* ================= SECTION ================= */
 section {
-    padding: 120px 0; /* 상하 여백을 조금 더 넓혀 시각적 답답함 해소 */
+    /* 기존 padding은 유지하되 최소 높이를 100vh로 설정합니다 */
+    min-height: 100vh; 
+    padding: 120px 0; 
+    
+    /* 뷰포트 스냅을 위한 필수 속성 */
+    scroll-snap-align: start; 
+    
+    /* 내용이 중앙에 오도록 레이아웃 잡기 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box; /* 패딩이 높이에 포함되도록 설정 */
+    scroll-margin-top: 80px; /* 메뉴바 높이만큼 띄움 */
 }
 
 .section-header {
