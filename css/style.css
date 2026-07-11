@@ -121,7 +121,7 @@ nav a:hover {
     color: #ffffff;        
     font-size: 1.1rem;     
     margin: 0 0 50px 0;     
-    line-height: 1.3;      /* 줄 간격 조절 */
+    line-height: 1.0;      /* 줄 간격 조절 */
 }
 
 /* ================= BUTTON ================= */
