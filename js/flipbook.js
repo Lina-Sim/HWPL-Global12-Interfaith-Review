@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
         drawShadow: false,
         maxShadowOpacity: 0.15,
 
-        mobileScrollSupport: false,
+        mobileScrollSupport: true,
 
         usePortrait: true
 
