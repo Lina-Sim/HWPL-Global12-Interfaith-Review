@@ -87,7 +87,8 @@ nav a:hover {
 
 /* Hero 내부 콘텐츠 정렬 */
 .hero-content {
-    max-width: 800px; /* 글자가 너무 옆으로 퍼지지 않게 제한 */
+    text-align: left;
+    max-width: 600px; /* 글자가 너무 옆으로 퍼지지 않게 제한 */
     margin: 0 auto;   /* 중앙 정렬 */
     width: 100%;
 }
@@ -128,7 +129,8 @@ nav a:hover {
 .btn {
     display: inline-block;
     /* 글자와 버튼 테두리 사이 여백 위아래, 좌우 */
-    padding: 12px 10px;
+    padding: 15px 30px;
+    min-width: 160px;   /* [추가] 최소 가로 길이를 설정하여 작아짐 방지 */
     border-radius: 40px;
     margin-right: 0px;
     font-size: 15px;
@@ -141,9 +143,8 @@ nav a:hover {
 .hero-buttons {
     margin-top: 50px; /* 설명문과 버튼 사이 간격 */
     display: flex;
-    justify-content: center;
-    gap: 15px; /* 두 버튼 사이의 간격 */
-    padding-right: 200px;    /* 오른쪽 패딩을 줘서 시각적으로 왼쪽으로 쏠리게 만듦 */
+    justify-content: flex-start;
+    gap: 20px; /* 두 버튼 사이의 간격 */
 }
 
 .btn-gold {
