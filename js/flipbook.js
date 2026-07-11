@@ -22,22 +22,21 @@ window.addEventListener("DOMContentLoaded", () => {
         maxShadowOpacity: 0.15,
 
         mobileScrollSupport: true,
-
         usePortrait: true
 
     } : {
 
         // ===== Desktop (기존 그대로) =====
-        width: 700,
-        height: 990,
+        width: 800,
+        height: 1131,
 
         size: "stretch",
 
-        minWidth: 315,
-        maxWidth: 700,
+        minWidth: 500,
+        maxWidth: 1200,
 
-        minHeight: 450,
-        maxHeight: 990,
+        minHeight: 700,
+        maxHeight: 1700,
 
         showCover: true,
 
@@ -45,6 +44,7 @@ window.addEventListener("DOMContentLoaded", () => {
         maxShadowOpacity: 0.4,
 
         mobileScrollSupport: false
+        usePortrait: false
     };
 
     const pageFlip = new St.PageFlip(
