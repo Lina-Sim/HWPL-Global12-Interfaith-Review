@@ -23,8 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         mobileScrollSupport: false,
 
-        usePortrait: true,
-        renderOnlyPage: true
+        usePortrait: true
 
     } : {
 
