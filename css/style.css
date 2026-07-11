@@ -462,7 +462,7 @@ h2 {
 #contact {
     background: #4a4a4a; /* 조금 더 세련된 어두운 톤 */
     color: #fff;
-    padding: 40px 0;    /* 상하 여백을 동일하게 주어 균형을 맞춤 */
+    padding: 20px 0;    /* 상하 여백을 동일하게 주어 균형을 맞춤 */
     text-align: center;
     /* 높이를 콘텐츠 크기에 딱 맞춤 */
     min-height: auto; 
