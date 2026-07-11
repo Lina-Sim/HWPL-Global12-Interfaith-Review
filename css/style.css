@@ -88,9 +88,12 @@ nav a:hover {
 /* Hero 내부 콘텐츠 정렬 */
 .hero-content {
     text-align: left;
-    max-width: 600px; /* 글자가 너무 옆으로 퍼지지 않게 제한 */
-    margin: 0 auto;   /* 중앙 정렬 */
+    max-width: 650px;   /* 가독성을 위해 650으로 설정 */
     width: 100%;
+    
+    /* 여기서 정렬을 조절합니다 */
+    margin-left: 50px;  /* 왼쪽에서 얼마나 띄울지 숫자로 결정 (예: 50px, 100px) */
+    margin-right: auto; /* 오른쪽 여백은 자동으로 밀려나게 함 */
 }
 
 .eyebrow {
