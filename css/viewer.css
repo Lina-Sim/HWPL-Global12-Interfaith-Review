@@ -41,6 +41,16 @@ body {
     object-fit: contain; /* 찌그러짐 없이 꽉 차게 */
 }
 
+/* 라이브러리가 생성하는 페이지 블록의 배경색을 투명하게 만듭니다 */
+.stf__block {
+    background-color: transparent !important;
+}
+
+/* 페이지 컨테이너 자체의 배경도 투명하게 처리 */
+.page {
+    background-color: transparent !important;
+}
+
 /* 모바일 분기 */
 #mobile-cview { display: none; }
 @media(max-width: 768px) {
