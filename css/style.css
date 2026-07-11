@@ -34,7 +34,7 @@ a {
     
     /* 💡 이 부분이 그림자 번짐을 조절하는 핵심입니다 */
     /* 아래 숫자를 조정해 보세요: 0 2px 5px rgba(0,0,0,0.1) -> 그림자를 훨씬 옅게 */
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.01); 
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.01); 
 }
 
 .header .container {
@@ -108,7 +108,7 @@ nav a:hover {
     font-size: 24px;
     margin: 25px 0 45px;
     font-weight: 300;
-    color: #ffffff;
+    color: #444343;
     text-shadow: none; /* 그림자 제거 */
 }
 
@@ -140,9 +140,9 @@ nav a:hover {
 /* Explore Archive 버튼 (btn 클래스 속성을 그대로 사용하도록 수정) */
 .btn-outline {
     /* btn 클래스의 기본 패딩을 따르기 위해 padding 삭제 */
-    background: rgba(255, 255, 255, 0.15); /* 좀 더 연한 반투명 색상 */
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: #d3d3d3; !important;
+    background: rgba(223, 223, 223, 0.4); /* 좀 더 연한 반투명 색상 */
+    border: 1px solid rgba(223, 223, 223, 0.4);
+    color: #ffffff; !important;
     text-decoration: none;
     border-radius: 40px; /* btn과 동일한 둥근 모양 */
     transition: all 0.4s ease;
