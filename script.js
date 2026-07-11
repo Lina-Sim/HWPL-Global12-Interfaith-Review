@@ -12,6 +12,9 @@ window.addEventListener("DOMContentLoaded", () => {
             maxHeight: 990,
             showCover: true,
             mobileScrollSupport: true
+
+            maxShadowOpacity:0.2,
+            usePortrait:true
         }
     );
 
