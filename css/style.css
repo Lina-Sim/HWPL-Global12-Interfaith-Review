@@ -408,17 +408,21 @@ h2 {
 footer {
     background: #555;
     color: white;
-    padding: 60px 0;
+    padding: 40px 0 60px 0; /* 기존 60px에서 위쪽을 40px로 줄여 위로 당김 */
 }
 
 footer .container {
     display: flex;
     justify-content: space-between;
+    /* [추가] 내부 콘텐츠를 한 덩어리로 보고 정렬 조절 */
+    align-items: center; 
+    flex-wrap: wrap; /* 화면이 작아질 경우 대비 */
 }
 
 .copyright {
     text-align: center;
-    margin-top: 40px;
+    /* [수정] 위쪽 여백을 60px로 늘려 윗부분과 확실히 분리합니다 */
+    margin-top: 60px;
     color: #777;
     font-size: 13px;
 }
