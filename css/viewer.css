@@ -213,8 +213,16 @@ body {
    MOBILE PDF VIEWER
 ========================= */
 
-#mobile-view {
-    display: none;
+#mobile-cview {
+    display:none;
+    width:100%;
+    height:100vh;
+    overflow:auto;
+}
+
+#pdf-canvas {
+    width:100%;
+    height:auto;
 }
 
 
@@ -224,16 +232,8 @@ body {
         display:none;
     }
 
-    #mobile-view {
+    #mobile-cview {
         display:block;
-        width:100%;
-        height:100vh;
-    }
-
-    #mobile-view iframe {
-        width:100%;
-        height:100%;
-        border:none;
     }
 
 }
