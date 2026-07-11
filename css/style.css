@@ -88,7 +88,7 @@ nav a:hover {
 }
 
 .eyebrow {
-    color: #d4af37;
+    color: #f8d151;
     letter-spacing: 4px;
     font-size: 14px;
     margin-bottom: 20px;
@@ -99,7 +99,7 @@ nav a:hover {
     font-family: "Cormorant Garamond", serif;
     font-size: 90px;
     line-height: 1.1;
-    color: #444343;
+    color: #ffffff;
     margin-bottom: 20px;
     text-shadow: none; /* 그림자 제거 */
 }
@@ -108,12 +108,12 @@ nav a:hover {
     font-size: 24px;
     margin: 25px 0 45px;
     font-weight: 300;
-    color: #444343;
+    color: #ffffff;
     text-shadow: none; /* 그림자 제거 */
 }
 
 .hero-description {
-    color: #4a4a4a;        /* 진회색 */
+    color: #dfdede;        /* 진회색 */
     font-size: 1.1rem;     
     margin: 0;             /* p 태그 기본 여백 제거 */
     line-height: 1.6;      /* 줄 간격 조절 */
