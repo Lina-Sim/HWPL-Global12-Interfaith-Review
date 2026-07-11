@@ -197,7 +197,7 @@ nav a:hover {
 section {
     /* 기존 padding은 유지하되 최소 높이를 100vh로 설정합니다 */
     min-height: 100vh; 
-    padding: 120px 0; 
+    padding: 120px 0 120px 0; 
     
     /* 뷰포트 스냅을 위한 필수 속성 */
     scroll-snap-align: start; 
@@ -302,7 +302,7 @@ h2 {
 .archive {
     background: #e8dfd0;
     position: relative;
-    padding: 120px 0 140px; 
+    padding: 60px 0 140px; /*상단, 좌우, 하단*/
 }
 
 .archive-grid {
