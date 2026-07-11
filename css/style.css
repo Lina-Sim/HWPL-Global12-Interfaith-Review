@@ -80,14 +80,20 @@ nav a:hover {
 .hero {
     height: 90vh;
     min-height: 700px;
-    /* [교정] 눈부심 방지*/
+    width: 100%; /* 너비를 부모 요소에 꽉 차게 설정 */
+    
+    /* 배경 설정 최적화 */
     background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(232, 223, 208, 0.2)), url("../images/hero-bg.jpg");
-    background-size: cover;
-    background-position: center;
+    
+    /* [핵심 수정] */
+    background-size: cover;         /* 이미지를 영역에 꽉 차게(비율 유지) */
+    background-position: center;    /* 이미지를 항상 정중앙에 고정 */
+    background-repeat: no-repeat;   /* 이미지가 반복되지 않게 함 */
+    background-attachment: fixed;   /* (선택사항) 스크롤 시 이미지가 고정되어 더 고급스럽게 보임 */
+    
     display: flex;
     align-items: center;
-    /* 여백 확보를 위해 추가 */
-    padding: 0 50px; 
+    padding: 0 50px;
 }
 
 /* Hero 내부 콘텐츠 정렬 */
@@ -436,8 +442,10 @@ h2 {
 #contact {
     background: #4a4a4a; /* 조금 더 세련된 어두운 톤 */
     color: #fff;
-    padding: 80px 0 40px 0; /* 위쪽 여백을 충분히 주어 섹션을 분리 */
+    padding: 60px 0;    /* 상하 여백을 동일하게 주어 균형을 맞춤 */
     text-align: center;
+    min-height: auto; 
+    scroll-snap-align: end;
 }
 
 #contact .container {
@@ -445,6 +453,9 @@ h2 {
     justify-content: center; /* 내용을 가운데로 */
     gap: 60px; /* 로고와 연락처 사이를 넉넉하게 */
     margin-bottom: 40px; /* 카피라이트와 본문 간격 */
+}
+#contact {
+    margin-bottom: 0;
 }
 
 /* 푸터 내부 폰트 스타일 */
