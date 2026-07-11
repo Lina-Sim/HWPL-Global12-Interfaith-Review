@@ -359,16 +359,33 @@ h2 {
 
 /* ================= ABOUT ================= */
 .about {
-    text-align: center;
+    text-align: left; /* 왼쪽 정렬 */
     background: #fff;
-    padding: 120px 0; /* 위아래 여백을 120px로 넓힘 */
+    padding: 120px 0;
+}
+
+.about-content { /* 텍스트를 감싸는 별도의 컨테이너를 쓰는 것을 추천합니다 */
+    max-width: 750px;
+    margin: 0 auto; /* 사이트 전체 가로 중앙 배치는 유지 */
+    padding: 0 20px; /* 모바일에서 텍스트가 끝에 붙지 않게 방지 */
+}
+
+.about h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #222;
 }
 
 .about p {
-    max-width: 750px;
-    margin: 30px auto 10;
+    margin-bottom: 25px; /* 문단 사이의 간격을 명확하게 */
     color: #555;
     font-size: 17px;
+    line-height: 1.7; /* 줄 간격을 넓혀 가독성 향상 */
+}
+
+.about strong {
+    color: #000; /* 강조 문구는 더 진하게 */
+    font-weight: 600;
 }
 
 /* ================= SUPPORT ================= */
