@@ -442,8 +442,9 @@ h2 {
 #contact {
     background: #4a4a4a; /* 조금 더 세련된 어두운 톤 */
     color: #fff;
-    padding: 60px 0;    /* 상하 여백을 동일하게 주어 균형을 맞춤 */
+    padding: 40px 0;    /* 상하 여백을 동일하게 주어 균형을 맞춤 */
     text-align: center;
+    /* 높이를 콘텐츠 크기에 딱 맞춤 */
     min-height: auto; 
     scroll-snap-align: end;
 }
@@ -451,8 +452,8 @@ h2 {
 #contact .container {
     display: flex;
     justify-content: center; /* 내용을 가운데로 */
-    gap: 60px; /* 로고와 연락처 사이를 넉넉하게 */
-    margin-bottom: 40px; /* 카피라이트와 본문 간격 */
+    gap: 40px; /* 로고와 연락처 사이를 넉넉하게 */
+    margin-bottom: 20px; /* 카피라이트와 본문 간격 */
 }
 #contact {
     margin-bottom: 0;
@@ -474,9 +475,9 @@ h2 {
 .copyright {
     text-align: center;
     color: #999;
-    font-size: 13px;
+    font-size: 12px;
     border-top: 1px solid #5a5a5a; /* 구분선 추가 */
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 /* 반응형: 화면이 작아지면 세로로 쌓기 */
