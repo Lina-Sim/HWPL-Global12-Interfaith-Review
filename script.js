@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 width: 1000,
                 height: 1414,
 
-                size: "stretch",
+                size: "fixed",
 
                 minWidth: 390,
                 maxWidth: 1000,
