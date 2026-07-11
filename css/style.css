@@ -1,3 +1,17 @@
+/* 가장 선명한 축소 처리를 위한 설정 (가장 위에 배치) */
+img {
+    /* 모바일 브라우저의 이미지 뭉개짐 방지 */
+    image-rendering: -webkit-optimize-contrast; /* 사파리/크롬 최적화 */
+    image-rendering: crisp-edges;               /* 최신 브라우저 표준 */
+    image-rendering: pixelated;                 /* 보간법 제어 */
+    
+    /* 하드웨어 가속 강제 (렌더링 품질 개선) */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    
+    /* 이미지 비율 강제 유지 */
+    object-fit: contain;
+}
 html {
     scroll-behavior: smooth; /* 부드러운 스크롤 */
     scroll-snap-type: y mandatory; /* Y축 스크롤을 강제로 스냅시킴 */
@@ -260,6 +274,10 @@ h2 {
     border-radius: 4px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07), 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    object-fit: cover; 
+    backface-visibility: hidden; /* 모바일에서 렌더링 품질 개선 */
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0); /* 하드웨어 가속 강제 사용 */
 }
 
 .latest-grid .cover img:hover {
@@ -360,6 +378,8 @@ h2 {
     aspect-ratio: 180 / 255; /* 중요: 이미지의 원래 비율(비율 유지)을 강제로 지정 */
     object-fit: contain;
     background-color: #f7f4ee; /* 이미지가 작아서 생기는 빈 공간을 채워줄 우아한 배경색 */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .book img:hover {
