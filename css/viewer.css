@@ -1,31 +1,27 @@
 /* =================================================
-   기본 초기화
+   기본 및 컨테이너
 ================================================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     width: 100%;
     height: 100vh;
-    background: #080808;
+    background: #080808; /* 검은 배경 */
     overflow: hidden;
     font-family: "Noto Sans KR", sans-serif;
 }
 
-/* =================================================
-   전체 컨테이너 (배경 및 중앙 정렬 담당)
-================================================= */
 .viewer-container {
-    position: relative;
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle, #2a2a2a 0%, #111111 60%, #050505 100%);
+    background: #080808; /* 그라데이션보다 깔끔한 단색 검정 */
 }
 
 /* =================================================
-   데스크탑 플립북 뷰어 (중앙 배치)
+   플립북 핵심 배치 (가장 중요)
 ================================================= */
 #desktop-view {
     width: 100%;
@@ -36,9 +32,10 @@ body {
 }
 
 #book {
-    width: 100%;
-    max-width: 1000px;
-    height: 90vh; /* 화면 높이의 90%로 고정하여 잘림 방지 */
+    width: 100%;       /* 가로를 최대로 확보 */
+    height: 100%;      /* 세로도 컨테이너 높이까지 사용 */
+    max-width: 1200px; /* 책이 너무 커지지 않게 제한 */
+    max-height: 95vh;  /* 위아래 여백을 최소화하여 꽉 차게 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,74 +43,23 @@ body {
 }
 
 .page {
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
     background: white;
-    overflow: hidden;
 }
 
 .page img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* 왜곡 없이 박스 안에 맞춤 */
+    object-fit: contain; /* 이미지 왜곡 없이 박스에 맞춤 */
 }
 
 /* =================================================
-   UI 요소 (버튼, 호버존, 돌아가기 버튼)
-================================================= */
-.hover-zone {
-    position: absolute;
-    top: 0;
-    width: 25%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    opacity: 0;
-    color: rgba(255, 255, 255, 0.55);
-    font-size: 45px;
-    transition: all 0.3s ease;
-    z-index: 20;
-    pointer-events: auto;
-    cursor: pointer;
-}
-
-.left-zone { left: 0; justify-content: flex-start; padding-left: 25px; }
-.right-zone { right: 0; justify-content: flex-end; padding-right: 25px; }
-.hover-zone:hover { opacity: 1; color: white; }
-
-.library-btn {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: rgba(255,255,255,0.8);
-    text-decoration: none;
-    padding: 12px 30px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 30px;
-    background: rgba(255, 255, 255, 0.05);
-    z-index: 50;
-    backdrop-filter: blur(5px);
-    transition: all 0.3s;
-}
-
-.library-btn:hover { background: white; color: #111; }
-
-/* =================================================
-   모바일 반응형 및 PDF 뷰어
+   모바일 PDF 뷰어 (기존 유지)
 ================================================= */
 #mobile-cview { display: none; }
-
 @media(max-width: 768px) {
     #desktop-view { display: none; }
-    #mobile-cview {
-        display: block;
-        width: 100%;
-        height: 100vh;
-    }
-    #mobile-cview iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
+    #mobile-cview { display: block; width: 100%; height: 100vh; }
+    #mobile-cview iframe { width: 100%; height: 100%; border: none; }
 }
