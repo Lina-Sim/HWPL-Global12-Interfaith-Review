@@ -500,14 +500,6 @@ h2 {
     padding-top: 10px;
 }
 
-/* 반응형: 화면이 작아지면 세로로 쌓기 */
-@media(max-width: 768px) {
-    #contact .container {
-        flex-direction: column;
-        gap: 30px;
-    }
-}
-
 /* ================= RESPONSIVE ================= */
 @media(max-width:1024px) {
     .archive-grid {
@@ -517,7 +509,7 @@ h2 {
 
 @media(max-width: 768px) {
     .hero h1 {
-        font-size: 55px;
+        font-size: 55px; /* 모바일에서 글자가 너무 크면 36px 정도로 더 줄여도 됩니다 */
     }
     .hero-text {
         font-size: 18px;
@@ -534,7 +526,7 @@ h2 {
         display: none;
     }
     
-    /* 푸터 반응형 유지 */
+    /* 여기서 푸터 설정을 통합 관리 */
     #contact .container {
         flex-direction: column;
         gap: 30px;
