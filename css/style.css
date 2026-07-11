@@ -99,7 +99,7 @@ nav a:hover {
     font-family: "Cormorant Garamond", serif;
     font-size: 90px;
     line-height: 1.1;
-    color: #ffffff;
+    color: #444343;
     margin-bottom: 20px;
     text-shadow: none; /* 그림자 제거 */
 }
@@ -142,7 +142,7 @@ nav a:hover {
     /* btn 클래스의 기본 패딩을 따르기 위해 padding 삭제 */
     background: rgba(255, 255, 255, 0.15); /* 좀 더 연한 반투명 색상 */
     border: 1px solid rgba(255, 255, 255, 0.4);
-    color: #ffffff !important;
+    color: #d3d3d3; !important;
     text-decoration: none;
     border-radius: 40px; /* btn과 동일한 둥근 모양 */
     transition: all 0.4s ease;
