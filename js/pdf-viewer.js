@@ -1,26 +1,31 @@
-const pdfUrl = "issues/vol01.pdf";
+if (window.innerWidth <= 768) {
 
-const canvas = document.getElementById("pdf-canvas");
-const ctx = canvas.getContext("2d");
+    const pdfUrl = "issues/vol01.pdf";
 
-
-pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
-
-    pdf.getPage(1).then(page => {
-
-        const viewport = page.getViewport({
-            scale: 2
-        });
-
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
+    const canvas = document.getElementById("pdf-canvas");
+    const context = canvas.getContext("2d");
 
 
-        page.render({
-            canvasContext: ctx,
-            viewport: viewport
+    pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+
+        pdf.getPage(1).then(page => {
+
+            const viewport = page.getViewport({
+                scale: 2
+            });
+
+
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+
+
+            page.render({
+                canvasContext: context,
+                viewport: viewport
+            });
+
         });
 
     });
 
-});
+}
