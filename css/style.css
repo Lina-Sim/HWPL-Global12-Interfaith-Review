@@ -236,7 +236,7 @@ h2 {
 /* 본문 글 아래 여백을 확실하게 주어 버튼들을 아래로 시원하게 밀어냅니다 */
 .latest-info p {
     color: #555;
-    margin-bottom: 50px !important; 
+    margin-bottom: 30px !important; 
 }
 
 /* Download PDF 버튼 기본 스타일 설정 */
