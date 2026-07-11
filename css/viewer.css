@@ -196,8 +196,13 @@ body {
 /* 모바일 반응형 조정 */
 @media(max-width: 768px) {
     #book {
-        width: 90vw;
-        height: 127vw;
+        width:96vw;
+
+        max-width:none;
+
+        height:auto;
+
+        aspect-ratio:1786/2526;
     }
     .hover-zone {
         display: none; /* 모바일은 터치로 넘기므로 숨김 */
