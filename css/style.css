@@ -232,11 +232,24 @@ h2 {
 }
 
 /* ================= LATEST ISSUE ================= */
+#latest {
+    min-height: 100vh; /* 화면 꽉 채우기 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 세로 중앙 정렬 */
+    align-items: center;      /* 가로 중앙 정렬 */
+    padding: 100px 20px;      /* 상하 여백 확보 */
+    box-sizing: border-box;
+    scroll-snap-align: center; /* 스크롤 시 화면 중앙으로 딱 붙음 */
+}
+
 .latest-grid {
     display: grid;
     grid-template-columns: 420px 1fr;
     gap: 80px;
-    align-items: center;
+    align-items: center;      /* 그리드 안의 이미지와 텍스트를 수직 중앙 정렬 */
+    max-width: 1000px;        /* 너무 넓어지지 않게 제한 */
+    margin: 0 auto;
 }
 
 .latest-grid .cover img {
@@ -261,10 +274,17 @@ h2 {
     color: #111;
 }
 
-/* 본문 글 아래 여백을 확실하게 주어 버튼들을 아래로 시원하게 밀어냅니다 */
 .latest-info p {
     color: #555;
-    margin-bottom: 30px !important; 
+    margin-bottom: 30px !important; /* 버튼과 간격 확보 */
+    line-height: 1.6;
+}
+
+/* 버튼 컨테이너가 있다면 감싸주면 좋지만, 우선 기존 코드 유지 */
+.latest-info .btn-gold,
+.latest-info a[href*="pdf"] {
+    margin-top: 20px !important; /* 40px에서 20px로 줄여 밀림 현상 방지 */
+    margin-right: 15px;         /* 두 버튼 사이의 좌우 간격 추가 */
 }
 
 /* Download PDF 버튼 기본 스타일 설정 */
