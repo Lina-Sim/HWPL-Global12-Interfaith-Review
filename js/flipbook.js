@@ -24,33 +24,23 @@ window.addEventListener("DOMContentLoaded", () => {
         mobileScrollSupport: true,
         usePortrait: true
 
-    } : {
-
-        // ===== Desktop (기존 그대로) =====
-        width: 1786,
-        height: 2526,
-
-        size: "stretch",
-
-        minWidth: 400,
-        maxWidth: 1786,
-
-        minHeight: 500,
-        maxHeight: 2526,
-
-        showCover: true,
-
-        drawShadow: true,
-        maxShadowOpacity: 0.4,
-
-        mobileScrollSupport: false,
-        usePortrait: false
-    };
+    }
 
     const pageFlip = new St.PageFlip(
         document.getElementById("book"),
         options
     );
+
+     // ===== Desktop (기존 그대로) =====
+        width: 600,
+        height: 850,
+
+        size: "stretch",
+
+       flippingTime:900,
+       usePortrait:true,
+       drawShadow:true,
+       maxShadowOpacity:0.5
 
     pageFlip.loadFromImages([
         "images/cover-vol01.png",
