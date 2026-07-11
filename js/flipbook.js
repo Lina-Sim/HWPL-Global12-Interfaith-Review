@@ -27,8 +27,8 @@ window.addEventListener("DOMContentLoaded", () => {
     } : {
 
         // ===== Desktop (기존 그대로) =====
-        width: 799,
-        height: 990,
+        width: 1786,
+        height: 2526,
 
         size: "stretch",
 

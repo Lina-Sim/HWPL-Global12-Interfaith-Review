@@ -1,34 +1,52 @@
+/* 1. 기본 초기화 - 여백 제거 */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body { width: 100%; height: 100vh; background: #080808; overflow: hidden; }
+body { 
+    width: 100%; height: 100vh; 
+    background: #080808; 
+    overflow: hidden; 
+}
 
+/* 2. 뷰어 컨테이너 - 화면 전체 사용 */
 .viewer-container {
     width: 100vw; height: 100vh;
     display: flex; justify-content: center; align-items: center;
     background: #080808;
 }
 
-/* 고정형 레이아웃: 화면 크기가 바뀌어도 비율을 유지 */
-#book {
-    height: 90vh; /* 화면 높이의 90%로 고정 */
-    aspect-ratio: 1786 / 2526; /* 원본 비율 */
-    width: auto;  /* 가로는 높이에 맞춰 자동 계산 */
-    
-    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.8));
-    display: flex;
+/* 3. 데스크탑 뷰 - 라이브러리 캔버스가 화면에 꽉 차게 설정 */
+#desktop-view {
+    width: 100vw; height: 100vh;
+    display: flex; justify-content: center; align-items: center;
 }
 
-.page { width: 100% !important; height: 100% !important; }
+#book {
+    /* 높이를 화면에 딱 맞게 고정하고, 가로는 비율에 따라 자동 조절 */
+    height: 100vh; 
+    width: auto;
+    /* 중요: 캔버스 자체가 화면을 넘치지 않게 조절 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-/* 화질 저하 방지: 라이브러리가 생성하는 캔버스를 강제로 확대하지 않음 */
+/* 4. 화질 핵심: 라이브러리가 생성하는 캔버스와 이미지 스타일 */
+/* 라이브러리는 .stf__block 클래스를 사용하므로 이를 강제로 화면에 맞춤 */
+.stf__block {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* 이미지 자체가 박스를 꽉 채우되, 원본 화질 유지 */
 .page img {
     width: 100%; height: 100%;
-    object-fit: contain; /* 이미지 화질 손상 없이 원본 그대로 표시 */
+    object-fit: contain; /* 강제 확대 없이 원본 비율 유지 */
 }
 
-/* 모바일 분기 */
+/* 5. 모바일/PDF 설정 (기존 유지) */
 #mobile-cview { display: none; }
 @media(max-width: 768px) {
     #desktop-view { display: none; }
     #mobile-cview { display: block; width: 100%; height: 100vh; }
+    #mobile-cview iframe { width: 100%; height: 100%; border: none; }
 }
