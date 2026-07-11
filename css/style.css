@@ -26,15 +26,12 @@ a {
 /* ================= HEADER ================= */
 .header {
     width: 100%;
-    /* 상단 고정 */
     position: fixed;
     top: 0;
     z-index: 1000;
-    /* 배경색을 흰색 그라데이션이나 반투명으로 수정 */
-    background: rgba(255, 255, 255, 0.8) !important; 
-    /* 그림자 조정 */
+    background: rgba(255, 255, 255, 0.5) !important; 
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.05) !important;
-    backdrop-filter: blur(10px); /* 유리 느낌을 주고 싶다면 추가 */
+    backdrop-filter: blur(10px);
 }
 
 .header .container {
@@ -44,28 +41,35 @@ a {
     padding: 22px 0; 
 }
 
-.logo {
+/* 로고 스타일 */
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
     font-family: "Cormorant Garamond", serif;
-    font-size: 28px; 
+    font-size: 28px;
     font-weight: 700;
-    color: white; /* 어두운 메인 이미지 위에서는 화사하게 빛납니다 */
     letter-spacing: 1px;
+    /* 공통 그림자 설정 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+    color: #ffffff !important;
 }
 
+/* 메뉴 스타일 */
 nav a {
     margin-left: 35px;
-    /* [교정] 어두운 배경이 사라졌으므로 메뉴 글자색을 더 뚜렷하고 맑은 화이트로 조정 */
-    color: rgba(255, 255, 255, 0.95) !important; 
     font-size: 15px;
     font-weight: 500;
-    /* x축(오른쪽 1px), y축(아래 1px), blur(번짐 2px), 색상(투명도 0.1) */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+    color: #ffffff !important;
+    /* 메뉴 그림자 설정 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
     transition: all 0.3s;
 }
 
 nav a:hover {
-    color: #c9a227 !important; /* 호버 시 세련된 골드 칼라 포인트 */
+    color: #f1c40f !important;
 }
+
 
 /* ================= HERO ================= */
 .hero {
