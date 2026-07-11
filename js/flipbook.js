@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
         width: 1000,
         height: 1414,
 
-        size: "fixed",
+        size: "stretch",
 
         minWidth: 390,
         maxWidth: 1000,
@@ -23,7 +23,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
         mobileScrollSupport: true,
 
-        usePortrait: true
+        usePortrait: true,
+        autoSize: true
 
     } : {
 
