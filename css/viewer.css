@@ -51,6 +51,21 @@ body {
     background-color: transparent !important;
 }
 
+/* 라이브러리가 생성하는 모든 요소의 배경을 강제로 지웁니다 */
+.stf__block, 
+.stf__parent, 
+.stf__wrapper, 
+.stf__content,
+.page {
+    background-color: transparent !important;
+    background: none !important;
+}
+
+/* 캔버스 자체가 흰색을 띠는 현상 방지 */
+canvas {
+    background-color: transparent !important;
+}
+
 /* 모바일 분기 */
 #mobile-cview { display: none; }
 @media(max-width: 768px) {

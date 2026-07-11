@@ -33,10 +33,10 @@ window.addEventListener("DOMContentLoaded", () => {
         size: "stretch",
 
         minWidth: 400,
-        maxWidth: 900,
+        maxWidth: 1786,
 
         minHeight: 500,
-        maxHeight: 1200,
+        maxHeight: 2526,
 
         showCover: true,
 
