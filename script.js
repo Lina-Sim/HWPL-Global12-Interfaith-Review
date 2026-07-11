@@ -1,22 +1,48 @@
 window.addEventListener("DOMContentLoaded", () => {
 
+    const isMobile = window.matchMedia("(max-width:768px)").matches;
+
     const pageFlip = new St.PageFlip(
         document.getElementById("book"),
-        {
-            width: 700,
-            height: 990,
-            size: "stretch",
-            minWidth: 315,
-            maxWidth: 700,
-            minHeight: 450,
-            maxHeight: 990,
-            showCover: true,
-            mobileScrollSupport: true
+        isMobile
+            ? {
+                // Mobile
+                width: 1000,
+                height: 1414,
 
-            maxShadowOpacity:0.2,
-            usePortrait:true
-        }
+                size: "stretch",
+
+                minWidth: 390,
+                maxWidth: 1000,
+
+                minHeight: 552,
+                maxHeight: 1414,
+
+                showCover: true,
+                usePortrait: true,
+                mobileScrollSupport: true,
+                maxShadowOpacity: 0.15
+            }
+            : {
+                // Desktop
+                width: 700,
+                height: 990,
+
+                size: "stretch",
+
+                minWidth: 315,
+                maxWidth: 700,
+
+                minHeight: 450,
+                maxHeight: 990,
+
+                showCover: true,
+                mobileScrollSupport: true,
+                maxShadowOpacity: 0.4
+            }
     );
+
+    // 아래 loadFromImages()부터는 그대로 유지
 
     // viewer.html의 이미지 리스트와 완벽 매칭 완료!
     pageFlip.loadFromImages([
