@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
         width: 1000,
         height: 1414,
 
-        size: "stretch",
+        size: "fixed",
 
         minWidth: 390,
         maxWidth: 1000,
@@ -44,7 +44,7 @@ window.addEventListener("DOMContentLoaded", () => {
         drawShadow: true,
         maxShadowOpacity: 0.4,
 
-        mobileScrollSupport: true
+        mobileScrollSupport: false
     };
 
     const pageFlip = new St.PageFlip(
