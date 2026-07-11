@@ -30,7 +30,6 @@ a {
     position: fixed;
     top: 0;
     z-index: 1000;
-  header {
     /* 배경색을 흰색 그라데이션이나 반투명으로 수정 */
     background: rgba(255, 255, 255, 0.8) !important; 
     /* 그림자 조정 */
