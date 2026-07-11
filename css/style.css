@@ -381,7 +381,7 @@ h2 {
 .about {
     text-align: left; /* 왼쪽 정렬 */
     background: #fff;
-    padding: 120px 0;
+    padding: 120px 20px; /* 좌우 패딩 추가로 모바일 가독성 확보 */
 }
 
 .about-content { /* 텍스트를 감싸는 별도의 컨테이너를 쓰는 것을 추천합니다 */
@@ -391,16 +391,17 @@ h2 {
 }
 
 .about h2 {
-    font-size: 28px;
+    font-size: 36px;
     margin-bottom: 30px;
-    color: #222;
+    color: #111;
+    font-weight: 700;
 }
 
 .about p {
-    margin-bottom: 25px; /* 문단 사이의 간격을 명확하게 */
-    color: #555;
-    font-size: 17px;
-    line-height: 1.7; /* 줄 간격을 넓혀 가독성 향상 */
+    margin-bottom: 30px; /* 문단 사이의 간격을 명확하게 */
+    color: #444;
+    font-size: 19px;
+    line-height: 1.8; /* 줄 간격을 넓혀 가독성 향상 */
 }
 
 .about strong {
@@ -413,35 +414,66 @@ h2 {
     text-align: center;
     background: #555;
     color: white;
-    padding: 120px 0; /* ABOUT과 마찬가지로 시원하게 여백 추가 */
+    padding: 120px 20px; /* ABOUT과 마찬가지로 시원하게 여백 추가 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .support h2 {
     color: white;
-    margin-bottom: 20px; /* 제목과 아래 글 사이 여백 */
+    margin-bottom: 25px; /* 제목과 아래 글 사이 여백 */
+}
+
+.support p {
+    font-size: 18px;
+    margin-bottom: 50px; /* [중요] 글자와 버튼 사이를 50px로 넓게 확보 */
+    opacity: 0.9;
 }
 
 /* ================= FOOTER ================= */
-footer {
-    background: #555;
-    color: white;
-    padding: 40px 0 60px 0; /* 기존 60px에서 위쪽을 40px로 줄여 위로 당김 */
+#contact {
+    background: #4a4a4a; /* 조금 더 세련된 어두운 톤 */
+    color: #fff;
+    padding: 80px 0 40px 0; /* 위쪽 여백을 충분히 주어 섹션을 분리 */
+    text-align: center;
 }
 
-footer .container {
+#contact .container {
     display: flex;
-    justify-content: space-between;
-    /* [추가] 내부 콘텐츠를 한 덩어리로 보고 정렬 조절 */
-    align-items: center; 
-    flex-wrap: wrap; /* 화면이 작아질 경우 대비 */
+    justify-content: center; /* 내용을 가운데로 */
+    gap: 60px; /* 로고와 연락처 사이를 넉넉하게 */
+    margin-bottom: 40px; /* 카피라이트와 본문 간격 */
 }
 
+/* 푸터 내부 폰트 스타일 */
+#contact h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-family: "Cormorant Garamond", serif;
+}
+
+#contact p {
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+/* 카피라이트 스타일 */
 .copyright {
     text-align: center;
-    /* [수정] 위쪽 여백을 60px로 늘려 윗부분과 확실히 분리합니다 */
-    margin-top: 60px;
-    color: #777;
+    color: #999;
     font-size: 13px;
+    border-top: 1px solid #5a5a5a; /* 구분선 추가 */
+    padding-top: 20px;
+}
+
+/* 반응형: 화면이 작아지면 세로로 쌓기 */
+@media(max-width: 768px) {
+    #contact .container {
+        flex-direction: column;
+        gap: 30px;
+    }
 }
 
 /* ================= RESPONSIVE ================= */
@@ -469,7 +501,9 @@ footer .container {
     nav {
         display: none;
     }
-    footer .container {
+    
+    /* 푸터 반응형 유지 */
+    #contact .container {
         flex-direction: column;
         gap: 30px;
         text-align: center;
