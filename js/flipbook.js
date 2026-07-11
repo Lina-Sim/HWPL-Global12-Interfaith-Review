@@ -27,16 +27,16 @@ window.addEventListener("DOMContentLoaded", () => {
     } : {
 
         // ===== Desktop (기존 그대로) =====
-        width: 800,
-        height: 1131,
+        width: 700,
+        height: 990,
 
         size: "stretch",
 
         minWidth: 500,
-        maxWidth: 1200,
+        maxWidth: 1400,
 
         minHeight: 700,
-        maxHeight: 1700,
+        maxHeight: 1400,
 
         showCover: true,
 
