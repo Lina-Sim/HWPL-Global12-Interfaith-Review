@@ -14,7 +14,7 @@ body { width: 100%; height: 100vh; background: #080808; overflow: hidden; font-f
 }
 
 #book {
-    width: 90vw;       /* 화면 가로의 90% 사용 */
+    width: 100vw;      
     max-width: 800px;  
     height: auto;      /* 높이를 고정하지 않고 가로폭에 따라 자동 계산 */
     
