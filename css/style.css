@@ -75,8 +75,8 @@ nav a:hover {
 .hero {
     height: 90vh;
     min-height: 700px;
-    /* [교정] 눈부심 방지: rgba(255, 255, 255, 0.4)로 흰색 필터를 조금 더 진하게 깔아 화사하지만 눈은 편안하게 */
-    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(232, 223, 208, 0.5)), url("../images/hero-bg.jpg");
+    /* [교정] 눈부심 방지*/
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(232, 223, 208, 0.2)), url("../images/hero-bg.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -120,8 +120,8 @@ nav a:hover {
 .hero-description {
     color: #ffffff;        
     font-size: 1.1rem;     
-    margin: 0 0 30px 0;     
-    line-height: 0.5;      /* 줄 간격 조절 */
+    margin: 0 0 15px 0;     
+    line-height: 0.2;      /* 줄 간격 조절 */
 }
 
 /* ================= BUTTON ================= */
