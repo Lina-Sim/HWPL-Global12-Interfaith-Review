@@ -14,12 +14,11 @@ body { width: 100%; height: 100vh; background: #080808; overflow: hidden; font-f
 }
 
 #book {
-    /* 기존 100%, max-width 설정을 버리고 고정 비율/단위 사용 */
-    width: 80vw;        /* 화면 가로의 80%로 고정 (항상 꽉 찬 느낌) */
-    max-width: 900px;   /* 너무 커지지 않게 제한 */
-    height: auto;       /* 높이는 자동으로 비율을 따라감 */
+    width: 90vw;       /* 화면 가로의 90% 사용 */
+    max-width: 800px;  
+    height: auto;      /* 높이를 고정하지 않고 가로폭에 따라 자동 계산 */
     
-    /* 1786 x 2526 비율 유지 (0.707) */
+    /* 정확한 비율 적용 */
     aspect-ratio: 1786 / 2526; 
     
     margin: 0 auto;
@@ -30,12 +29,16 @@ body { width: 100%; height: 100vh; background: #080808; overflow: hidden; font-f
 .page {
     width: 100% !important;
     height: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white; /* 흰색 여백을 위해 필요 */
 }
 
 .page img {
     width: 100%;
     height: 100%;
-    /* 꽉 찬 느낌을 유지하되 이미지 훼손 방지 */
+    /* [핵심] 찌그러짐을 방지하고 비율을 유지하며 박스에 꽉 차게 */
     object-fit: contain; 
 }
 
