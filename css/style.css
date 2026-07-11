@@ -13,8 +13,8 @@ img {
     object-fit: contain;
 }
 html {
-    scroll-behavior: smooth; /* 부드러운 스크롤 */
-    scroll-snap-type: y mandatory; /* Y축 스크롤을 강제로 스냅시킴 */
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity; /* 강제(mandatory)에서 근접(proximity)으로 변경 */
 }
 
 * {
@@ -482,11 +482,12 @@ h2 {
 #contact {
     background: #4a4a4a; /* 조금 더 세련된 어두운 톤 */
     color: #fff;
-    padding: 20px 0;    /* 상하 여백을 동일하게 주어 균형을 맞춤 */
+    padding: 40px 0 20px 0; /* 위쪽 패딩을 키워 간격을 확보 */
     text-align: center;
     /* 높이를 콘텐츠 크기에 딱 맞춤 */
     min-height: auto; 
     scroll-snap-align: end;
+    height: auto;
 }
 
 #contact .container {
