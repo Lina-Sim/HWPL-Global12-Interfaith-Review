@@ -21,10 +21,10 @@ window.addEventListener("DOMContentLoaded", () => {
         drawShadow: false,
         maxShadowOpacity: 0.15,
 
-        mobileScrollSupport: true,
+        mobileScrollSupport: false,
 
         usePortrait: true,
-        autoSize: true
+        renderOnlyPage: true
 
     } : {
 
