@@ -1,6 +1,6 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body { width: 100%; height: 100vh; background: #080808; overflow: hidden; font-family: "Noto Sans KR", sans-serif; }
+body { width: 100%; height: 100vh; background: #080808; overflow: hidden; }
 
 .viewer-container {
     width: 100vw; height: 100vh;
@@ -8,54 +8,26 @@ body { width: 100%; height: 100vh; background: #080808; overflow: hidden; font-f
     background: #080808;
 }
 
-#desktop-view {
-    width: 100%; height: 100%;
-    display: flex; justify-content: center; align-items: center;
-}
-
+/* 고정형 레이아웃: 화면 크기가 바뀌어도 비율을 유지 */
 #book {
-    width: 50vw;      
-    max-width: 800px;  
-    height: auto;      /* 높이를 고정하지 않고 가로폭에 따라 자동 계산 */
+    height: 90vh; /* 화면 높이의 90%로 고정 */
+    aspect-ratio: 1786 / 2526; /* 원본 비율 */
+    width: auto;  /* 가로는 높이에 맞춰 자동 계산 */
     
-    /* 정확한 비율 적용 */
-    aspect-ratio: 1786 / 2526; 
-    
-    margin: 0 auto;
     filter: drop-shadow(0 30px 60px rgba(0,0,0,0.8));
     display: flex;
 }
 
-.page {
-    width: 100% !important;
-    height: 100% !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: white; /* 흰색 여백을 위해 필요 */
-}
+.page { width: 100% !important; height: 100% !important; }
 
+/* 화질 저하 방지: 라이브러리가 생성하는 캔버스를 강제로 확대하지 않음 */
 .page img {
-    width: 100%;
-    height: 100%;
-    /* [핵심] 찌그러짐을 방지하고 비율을 유지하며 박스에 꽉 차게 */
-    object-fit: contain; 
+    width: 100%; height: 100%;
+    object-fit: contain; /* 이미지 화질 손상 없이 원본 그대로 표시 */
 }
 
-/* 라이브러리가 생성한 페이지 스타일 */
-.stf__block { background: white; }
-
-/* 하단 버튼 및 기타 UI */
-.hover-zone { position: absolute; top: 0; width: 25%; height: 100%; z-index: 20; cursor: pointer; display: flex; align-items: center; color: white; font-size: 45px; opacity: 0; transition: 0.3s; }
-.left-zone { left: 0; padding-left: 20px; }
-.right-zone { right: 0; justify-content: flex-end; padding-right: 20px; }
-.hover-zone:hover { opacity: 1; }
-
-.library-btn {
-    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-    color: white; text-decoration: none; padding: 10px 20px; border: 1px solid white; border-radius: 20px;
-}
-
+/* 모바일 분기 */
+#mobile-cview { display: none; }
 @media(max-width: 768px) {
     #desktop-view { display: none; }
     #mobile-cview { display: block; width: 100%; height: 100vh; }
