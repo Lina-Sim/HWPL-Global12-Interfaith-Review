@@ -120,8 +120,8 @@ nav a:hover {
 .hero-description {
     color: #ffffff;        
     font-size: 1.1rem;     
-    margin: 0;             /* p 태그 기본 여백 제거 */
-    line-height: 1;      /* 줄 간격 조절 */
+    margin: 0 0 40px 0;     
+    line-height: 1.6;      /* 줄 간격 조절 */
 }
 
 /* ================= BUTTON ================= */
