@@ -5,16 +5,16 @@ window.addEventListener("DOMContentLoaded", () => {
     const options = isMobile ? {
 
         // ===== Mobile =====
-        width: 1000,
-        height: 1414,
+        width: 1600,
+        height: 2263,
 
         size: "stretch",
 
         minWidth: 390,
-        maxWidth: 1000,
+        maxWidth: 1600,
 
         minHeight: 552,
-        maxHeight: 1414,
+        maxHeight: 2263,
 
         showCover: true,
 
