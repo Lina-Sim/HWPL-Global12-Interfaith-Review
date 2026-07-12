@@ -1,16 +1,7 @@
 /* 가장 선명한 축소 처리를 위한 설정 (가장 위에 배치) */
 img {
-    /* 모바일 브라우저의 이미지 뭉개짐 방지 */
-    image-rendering: -webkit-optimize-contrast; /* 사파리/크롬 최적화 */
-    image-rendering: crisp-edges;               /* 최신 브라우저 표준 */
-    image-rendering: pixelated;                 /* 보간법 제어 */
-    
-    /* 하드웨어 가속 강제 (렌더링 품질 개선) */
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    
-    /* 이미지 비율 강제 유지 */
-    object-fit: contain;
+    max-width: 100%;
+    height: auto;
 }
 html {
     scroll-behavior: smooth;
