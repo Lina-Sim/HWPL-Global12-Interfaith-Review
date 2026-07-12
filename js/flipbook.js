@@ -45,9 +45,7 @@ document.getElementById("nextBtn").addEventListener("pointerdown", () => {
 
 const leftZone = document.querySelector(".left-zone");
 const rightZone = document.querySelector(".right-zone");
-rightZone.addEventListener("pointerdown", () => {
-    alert("오른쪽 클릭됨");
-});
+
 
 if (leftZone) {
     leftZone.addEventListener("pointerdown", () => {
@@ -55,8 +53,10 @@ if (leftZone) {
     });
 }
 
+
 if (rightZone) {
     rightZone.addEventListener("pointerdown", () => {
+        alert("오른쪽 클릭됨");
         pageFlip.flipNext();
     });
 }

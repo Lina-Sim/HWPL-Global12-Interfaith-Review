@@ -144,8 +144,8 @@ canvas {
     height: 100%;
     display: flex;
     align-items: center;
-    z-index: 10;
-    pointer-events: auto;
+    z-index: 9999;
+    pointer-events:none;
     opacity:0;
 
     color: rgba(255,255,255,0.25);
@@ -160,6 +160,7 @@ canvas {
 /* 마우스를 올렸을 때 화살표 표시 */
 .viewer-container:hover .hover-zone {
     opacity: 1;
+    pointer-events:auto;
 }
 
 .left-zone{
