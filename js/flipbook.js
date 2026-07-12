@@ -35,11 +35,11 @@ window.addEventListener("DOMContentLoaded", () => {
     ]);
 
    // 이벤트 리스너
-document.getElementById("prevBtn").addEventListener("click", () => {
+document.getElementById("prevBtn").addEventListener("pointerdown", () => {
     pageFlip.flipPrev();
 });
 
-document.getElementById("nextBtn").addEventListener("click", () => {
+document.getElementById("nextBtn").addEventListener("pointerdown", () => {
     pageFlip.flipNext();
 });
 
