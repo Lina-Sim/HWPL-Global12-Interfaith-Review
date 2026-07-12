@@ -101,7 +101,7 @@ canvas {
     cursor: pointer;
     font-size: 80px; /* 화살표 크기 키움 */
     color: white !important; /* 흰색으로 강제 고정 */
-    opacity: 0.8;
+    padding: 0 5%; /* 책에서 좌우 여백 확보 */
     transition: 0.3s;
     user-select: none;
     text-shadow: 0 0 10px rgba(0,0,0,0.8); /* 배경색과 분리 */
@@ -118,7 +118,8 @@ canvas {
     height: 100%;
     display: flex;
     justify-content: space-between;
-    pointer-events: none; /* 컨트롤 영역 전체는 클릭 통과 */
+    align-items: center; /* 화살표를 중앙 높이로 */
+    pointer-events: none; /* 배경은 클릭 통과 */
     z-index: 1000;
 }
 
@@ -126,22 +127,6 @@ canvas {
     opacity: 1;
     transform: scale(1.1); /* 마우스 올리면 살짝 커지게 */
 }
-
-/* .hover-zone 스타일 수정 (전체 화면 클릭 가능하게) */
-.hover-zone {
-    position: absolute;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    z-index: 100; /* 캔버스 위로 */
-    cursor: pointer;
-    color: transparent; /* 글자는 안 보이게 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.left-zone { left: 0; }
-.right-zone { right: 0; }
 
 /* 하단 라이브러리 버튼 배치 */
 .library-btn {
