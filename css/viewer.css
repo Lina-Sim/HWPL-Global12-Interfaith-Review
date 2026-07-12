@@ -91,27 +91,23 @@ canvas {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 40px; /* 화면 끝에서 살짝 안으로 */
-    pointer-events: none; /* 클릭은 통과시키고 */
-    z-index: 100; /* 캔버스 위로 강제 노출 */
+    padding: 0 5%; /* 책 이미지에서 더 멀리 떨어지게 */
+    pointer-events: none; /* 배경은 클릭 통과 */
+    z-index: 9999 !important; /* 무조건 최상위 */
 }
 
 .controls span {
-    pointer-events: auto; /* 버튼만 클릭 가능하게 */
-    width: 60px;
-    height: 60px;
-    background: transparent;
-    color: #ffffff; /* 흰색으로 확실하게 지정 */
-    font-size: 50px; /* 화살표가 작아서 안 보였을 수 있으니 크기를 살짝 키움 */
+    pointer-events: auto; /* 화살표만 클릭 */
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0; /* 동그라미 제거 */
-    backdrop-filter: none; /* 블러 효과 제거 */
+    font-size: 80px; /* 화살표 크기 키움 */
+    color: white !important; /* 흰색으로 강제 고정 */
+    opacity: 0.8;
     transition: 0.3s;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5); /* 검은 배경에서 잘 보이게 그림자 추가 */
+    user-select: none;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8); /* 배경색과 분리 */
+    background: transparent !important; /* 동그라미 배경 완전 제거 */
 }
+
 
 /* 2. 클릭 영역 확대 (왼쪽, 오른쪽 영역 클릭 시 넘김) */
 .controls {
@@ -126,27 +122,9 @@ canvas {
     z-index: 1000;
 }
 
-/* 화살표 버튼의 배경을 완전히 투명하게 만듭니다 */
-.controls span {
-    pointer-events: auto;
-    width: 60px;
-    height: 60px;
-    background: transparent !important; /* 배경 제거 */
-    color: white; /* 화살표 색상 */
-    font-size: 50px; /* 화살표 크기 */
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0;
-    backdrop-filter: none;
-    transition: 0.3s;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5); /* 그림자 추가로 가독성 확보 */
-}
-
-/* 마우스를 올리면 살짝 흐려지게 */
 .controls span:hover {
-    opacity: 0.7;
+    opacity: 1;
+    transform: scale(1.1); /* 마우스 올리면 살짝 커지게 */
 }
 
 /* .hover-zone 스타일 수정 (전체 화면 클릭 가능하게) */
