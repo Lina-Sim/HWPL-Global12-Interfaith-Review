@@ -144,7 +144,7 @@ canvas {
     height: 100%;
     display: flex;
     align-items: center;
-    z-index: 9999;
+    z-index: 10;
     pointer-events: auto;
     opacity:0;
 
