@@ -9,7 +9,7 @@ body {
 .viewer-container {
     width: 100vw; height: 100vh;
     display: flex; justify-content: center; align-items: center;
-    background: #080808;
+    background: #f7f5f0;
     overflow: hidden;
 }
 
