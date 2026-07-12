@@ -20,13 +20,19 @@ body {
 
 /* 책 컨테이너: 절대 잘리지 않게 설정 */
 #book {
-    height: 100vh; 
+    height: 85vh; 
     width: auto;
     aspect-ratio: 1786 / 2526;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: visible; /* 잘림 방지 */
+    
+    /* 여기서 한 번에 정리하세요 */
+    display: block; 
+    margin: 0 auto; 
+    
+    /* 그림자 효과 */
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+    
+    /* 잘림 방지 */
+    overflow: visible; 
 }
 
 /* 라이브러리 캔버스 영역 */
