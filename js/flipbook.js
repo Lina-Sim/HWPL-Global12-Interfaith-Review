@@ -1,15 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
-    // 1. 모바일 여부 확인
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-    // 2. 모바일이면 PDF로 바로 이동
-    if (isMobile) {
-        window.location.href = "path/to/your-pdf-file.pdf"; // 여기에 PDF 경로를 넣어주세요
-        return; // 아래 북클립 코드는 실행하지 않음
-    }
-
-    // 3. PC 전용 북클립 설정 (기존에 잘 나오던 값으로 복원)
     const pageFlip = new St.PageFlip(
+    // PC 전용 북클립 설정  
         document.getElementById("book"),
         {
             width: 700,
