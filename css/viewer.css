@@ -94,7 +94,7 @@ canvas {
     padding: 0 40px;
     pointer-events: none; /* 배경은 클릭 통과 */
     z-index: 1000;
-
+}
 .controls span {
     pointer-events: auto; /* 화살표만 클릭 */
     cursor: pointer;
