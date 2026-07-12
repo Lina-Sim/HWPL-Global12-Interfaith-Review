@@ -38,10 +38,6 @@ window.addEventListener("DOMContentLoaded", () => {
 const leftZone = document.querySelector(".left-zone");
 const rightZone = document.querySelector(".right-zone");
 
-rightZone.addEventListener("pointerdown", () => {
-    alert("오른쪽 클릭됨");
-});
-
 if (leftZone) {
     leftZone.addEventListener("pointerdown", () => {
         pageFlip.flipPrev();
@@ -50,6 +46,7 @@ if (leftZone) {
 
 if (rightZone) {
     rightZone.addEventListener("pointerdown", () => {
+        console.log("현재 페이지:", pageFlip.getCurrentPageIndex());
         pageFlip.flipNext();
     });
 }
