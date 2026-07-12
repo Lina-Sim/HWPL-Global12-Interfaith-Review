@@ -83,7 +83,7 @@ canvas {
     #mobile-cview iframe { width: 100%; height: 100%; border: none; }
 }
 
-/* 좌우 화살표 버튼 배치 및 스타일 */
+/* 1. 버튼 배경 제거 및 화살표만 남기기 */
 .controls {
     position: absolute;
     top: 50%;
@@ -100,21 +100,70 @@ canvas {
     pointer-events: auto; /* 버튼만 클릭 가능하게 */
     width: 60px;
     height: 60px;
-    background: rgba(255, 255, 255, 0.1); /* 검정 배경과 어울리는 반투명 */
-    color: white;
-    font-size: 30px;
+    background: transparent;
+    color: #ffffff; /* 흰색으로 확실하게 지정 */
+    font-size: 50px; /* 화살표가 작아서 안 보였을 수 있으니 크기를 살짝 키움 */
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%; /* 둥근 버튼 */
-    backdrop-filter: blur(5px);
+    border-radius: 0; /* 동그라미 제거 */
+    backdrop-filter: none; /* 블러 효과 제거 */
     transition: 0.3s;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5); /* 검은 배경에서 잘 보이게 그림자 추가 */
 }
 
-.controls span:hover {
-    background: rgba(255, 255, 255, 0.3);
+/* 2. 클릭 영역 확대 (왼쪽, 오른쪽 영역 클릭 시 넘김) */
+.controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none; /* 컨트롤 영역 전체는 클릭 통과 */
+    z-index: 1000;
 }
+
+/* 화살표 버튼의 배경을 완전히 투명하게 만듭니다 */
+.controls span {
+    pointer-events: auto;
+    width: 60px;
+    height: 60px;
+    background: transparent !important; /* 배경 제거 */
+    color: white; /* 화살표 색상 */
+    font-size: 50px; /* 화살표 크기 */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    backdrop-filter: none;
+    transition: 0.3s;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5); /* 그림자 추가로 가독성 확보 */
+}
+
+/* 마우스를 올리면 살짝 흐려지게 */
+.controls span:hover {
+    opacity: 0.7;
+}
+
+/* .hover-zone 스타일 수정 (전체 화면 클릭 가능하게) */
+.hover-zone {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 100; /* 캔버스 위로 */
+    cursor: pointer;
+    color: transparent; /* 글자는 안 보이게 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left-zone { left: 0; }
+.right-zone { right: 0; }
 
 /* 하단 라이브러리 버튼 배치 */
 .library-btn {
