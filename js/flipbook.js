@@ -34,15 +34,28 @@ window.addEventListener("DOMContentLoaded", () => {
         "pages/vol01-page12.webp"
     ]);
 
-    // 이벤트 리스너들...
-    document.getElementById("prevBtn").addEventListener("click", () => pageFlip.flipPrev());
-    document.getElementById("nextBtn").addEventListener("click", () => pageFlip.flipNext());
+   // 이벤트 리스너
+document.getElementById("prevBtn").addEventListener("click", () => {
+    pageFlip.flipPrev();
 });
 
-    if (leftZone) {
-        leftZone.addEventListener("click", () => pageFlip.flipPrev());
-    }
+document.getElementById("nextBtn").addEventListener("click", () => {
+    pageFlip.flipNext();
+});
 
-    if (rightZone) {
-        rightZone.addEventListener("click", () => pageFlip.flipNext());
-    }
+const leftZone = document.querySelector(".left-zone");
+const rightZone = document.querySelector(".right-zone");
+
+if (leftZone) {
+    leftZone.addEventListener("click", () => {
+        pageFlip.flipPrev();
+    });
+}
+
+if (rightZone) {
+    rightZone.addEventListener("click", () => {
+        pageFlip.flipNext();
+    });
+}
+
+});
