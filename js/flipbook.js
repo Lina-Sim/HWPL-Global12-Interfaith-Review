@@ -48,9 +48,8 @@ if (leftZone) {
 
 if (rightZone) {
     rightZone.addEventListener("pointerdown", () => {
-        alert("오른쪽 클릭됨");
+        console.log("RIGHT ZONE");
         pageFlip.flipNext();
     });
 }
-
 });
