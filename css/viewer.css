@@ -144,7 +144,8 @@ canvas {
     height: 100%;
     display: flex;
     align-items: center;
-    z-index: 500;
+    z-index: 9999;
+    pointer-events: auto;
     opacity:0;
 
     color: rgba(255,255,255,0.25);
@@ -164,13 +165,13 @@ canvas {
 .left-zone{
     left:0;
     justify-content:flex-start;
-    padding-left:24px;
+    padding-left:30px;
 }
 
 .right-zone{
     right:0;
     justify-content:flex-end;
-    padding-right:24px;
+    padding-right:30px;
 }
 
 /* 화살표 위에 마우스 올렸을 때 */

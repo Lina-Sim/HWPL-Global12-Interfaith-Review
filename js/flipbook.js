@@ -47,13 +47,13 @@ const leftZone = document.querySelector(".left-zone");
 const rightZone = document.querySelector(".right-zone");
 
 if (leftZone) {
-    leftZone.addEventListener("click", () => {
+    leftZone.addEventListener("pointerdown", () => {
         pageFlip.flipPrev();
     });
 }
 
 if (rightZone) {
-    rightZone.addEventListener("click", () => {
+    rightZone.addEventListener("pointerdown", () => {
         pageFlip.flipNext();
     });
 }
