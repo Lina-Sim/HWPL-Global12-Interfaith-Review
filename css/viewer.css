@@ -83,32 +83,35 @@ canvas {
     #mobile-cview iframe { width: 100%; height: 100%; border: none; }
 }
 
-/* 1. 버튼 배경 제거 및 화살표만 남기기 */
-.controls {
+/* 좌우 넘기기 화살표 디자인 (hover-zone 활용) */
+.hover-zone {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 40px;
-    pointer-events: none; /* 배경은 클릭 통과 */
-    z-index: 1000;
-}
-.controls span {
-    pointer-events: auto; /* 화살표만 클릭 */
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 100;
     cursor: pointer;
-    font-size: 50px; 
-    color: #b0b0b0;
-    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px; /* 작게 시작 */
+    color: rgba(255, 255, 255, 0.3); /* 평소엔 아주 옅은 반투명 */
+    transition: all 0.3s ease;
     user-select: none;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    background: transparent !important; /* 동그라미 배경 완전 제거 */
 }
 
-.controls span:hover {
-    color: #ffffff; /* 마우스 올리면 흰색으로 */
-    transform: scale(1.1);
+.left-zone { left: 0; }
+.right-zone { right: 0; }
+
+/* 마우스 올리면 커지고 선명해짐 (손 모양 커서는 기본으로 생김) */
+.hover-zone:hover {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 45px; /* 살짝 커짐 */
+}
+
+.library-btn:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* 하단 라이브러리 버튼 배치 */
