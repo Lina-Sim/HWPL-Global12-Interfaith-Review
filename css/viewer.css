@@ -1,41 +1,54 @@
+/* 기본 초기화 */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
     width: 100%; height: 100vh; 
     background: #080808; 
     overflow: hidden; 
+    display: flex; justify-content: center; align-items: center;
 }
 
-/* 뷰어 컨테이너를 화면 전체로 고정 */
 .viewer-container {
     width: 100vw; height: 100vh;
     display: flex; justify-content: center; align-items: center;
     background: #080808;
-    overflow: hidden;
 }
 
-/* 
-   책의 핵심 수정: 
-   height: 90vh로 설정하여 위아래에 5vh씩 여백을 둠 
-   (이렇게 해야 상단 잘림이 확실히 방지됩니다)
-*/
+/* 책 컨테이너 */
 #book {
-    height: 90vh; 
+    height: 85vh; /* 화면 높이의 85%를 차지하게 하여 상하 여백 확보 */
     width: auto;
-    aspect-ratio: 1786 / 2526;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* 이전 코드의 drop-shadow 효과 복구 */
+    aspect-ratio: 1786 / 2526; /* 원본 책 비율 유지 */
+    display: block; 
+    margin: 0 auto;
     filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
 }
 
-/* 라이브러리 내부 요소 배경 투명화 및 정렬 유지 */
-.stf__parent { width: 100% !important; height: 100% !important; }
-.page { background-color: transparent !important; }
-.page img { width: 100%; height: 100%; object-fit: contain; }
+/* 캔버스 영역 강제 정렬 */
+.stf__parent {
+    width: 100% !important; 
+    height: 100% !important;
+    left: 0 !important;
+    top: 0 !important;
+}
 
-/* 모바일 대응 (이전 코드의 구조 유지) */
+/* 페이지 이미지 처리 */
+.page {
+    background-color: transparent !important;
+    width: 100%; height: 100%;
+}
+
+.page img {
+    width: 100%; height: 100%;
+    object-fit: contain; /* 이미지가 잘리지 않고 전체가 보이게 함 */
+}
+
+/* 배경 투명화 */
+.stf__block, .stf__wrapper, .stf__content {
+    background-color: transparent !important;
+}
+
+/* 모바일 분기 */
 #mobile-cview { display: none; }
 @media(max-width: 768px) {
     #desktop-view { display: none; }
