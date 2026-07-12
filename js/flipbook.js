@@ -35,14 +35,6 @@ window.addEventListener("DOMContentLoaded", () => {
     ]);
 
    // 이벤트 리스너
-document.getElementById("prevBtn").addEventListener("pointerdown", () => {
-    pageFlip.flipPrev();
-});
-
-document.getElementById("nextBtn").addEventListener("pointerdown", () => {
-    pageFlip.flipNext();
-});
-
 const leftZone = document.querySelector(".left-zone");
 const rightZone = document.querySelector(".right-zone");
 
