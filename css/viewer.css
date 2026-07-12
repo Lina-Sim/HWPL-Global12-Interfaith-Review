@@ -83,7 +83,7 @@ canvas {
     #mobile-cview iframe { width: 100%; height: 100%; border: none; }
 }
 
-/* 1. 버튼 배경 제거 및 화살표만 남기기 */
+/* 1. 컨트롤 영역 (화살표 배치) */
 .controls {
     position: absolute;
     top: 50%;
@@ -92,26 +92,27 @@ canvas {
     display: flex;
     justify-content: space-between;
     padding: 0 40px;
-    pointer-events: none; /* 배경은 클릭 통과 */
+    pointer-events: none;
     z-index: 1000;
-}
+} /* <-- 아까 이게 빠져서 난리였어요! */
+
 .controls span {
-    pointer-events: auto; /* 화살표만 클릭 */
+    pointer-events: auto;
     cursor: pointer;
     font-size: 50px; 
-    color: #b0b0b0;
+    color: #b0b0b0; /* 연한 회색 */
     transition: 0.3s;
     user-select: none;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    background: transparent !important; /* 동그라미 배경 완전 제거 */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* 은은한 그림자 */
+    background: transparent !important;
 }
 
 .controls span:hover {
-    color: #ffffff; /* 마우스 올리면 흰색으로 */
+    color: #ffffff; /* 마우스 올리면 흰색 */
     transform: scale(1.1);
 }
 
-/* 하단 라이브러리 버튼 배치 */
+/* 2. 하단 라이브러리 버튼 */
 .library-btn {
     position: absolute;
     bottom: 30px;
@@ -123,7 +124,7 @@ canvas {
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 30px;
     background: rgba(255, 255, 255, 0.05);
-    z-index: 100;
+    z-index: 1000; /* 버튼이 맨 위에 보이도록 설정 */
     backdrop-filter: blur(10px);
     transition: 0.3s;
 }
