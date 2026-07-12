@@ -146,9 +146,6 @@ canvas {
     align-items: center;
     z-index: 500;
     opacity:0;
-    .viewer-container:hover .hover-zone{
-    opacity:1;
-    }
 
     color: rgba(255,255,255,0.25);
     font-size: 54px;
@@ -158,6 +155,10 @@ canvas {
     user-select: none;
 
     transition: all .25s ease;
+}
+/* 마우스를 올렸을 때 화살표 표시 */
+.viewer-container:hover .hover-zone {
+    opacity: 1;
 }
 
 .left-zone{
@@ -172,6 +173,7 @@ canvas {
     padding-right:24px;
 }
 
+/* 화살표 위에 마우스 올렸을 때 */
 .hover-zone:hover{
     color:rgba(255,255,255,.9);
     text-shadow:0 0 15px rgba(255,255,255,.25);
