@@ -82,3 +82,57 @@ canvas {
     #mobile-cview { display: block; width: 100%; height: 100vh; }
     #mobile-cview iframe { width: 100%; height: 100%; border: none; }
 }
+
+/* 좌우 화살표 버튼 배치 및 스타일 */
+.controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px; /* 화면 끝에서 살짝 안으로 */
+    pointer-events: none; /* 클릭은 통과시키고 */
+    z-index: 100; /* 캔버스 위로 강제 노출 */
+}
+
+.controls span {
+    pointer-events: auto; /* 버튼만 클릭 가능하게 */
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1); /* 검정 배경과 어울리는 반투명 */
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* 둥근 버튼 */
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+.controls span:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* 하단 라이브러리 버튼 배치 */
+.library-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.library-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
