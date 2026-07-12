@@ -14,8 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
             showCover: true,
             drawShadow: true,
             maxShadowOpacity: 0.4,
-            usePortrait: false,
-            mobileScrollSupport: false // PC니까 끕니다
+            usePortrait:false
         }
     );
 
