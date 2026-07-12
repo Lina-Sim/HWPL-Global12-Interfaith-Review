@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
         "pages/vol01-page12.webp"
     ]);
 
-   // 이벤트 리스너
+ // 이벤트 리스너
 const leftZone = document.querySelector(".left-zone");
 const rightZone = document.querySelector(".right-zone");
 
@@ -46,7 +46,6 @@ if (leftZone) {
 
 if (rightZone) {
     rightZone.addEventListener("pointerdown", () => {
-        console.log("현재 페이지:", pageFlip.getCurrentPageIndex());
         pageFlip.flipNext();
     });
 }
