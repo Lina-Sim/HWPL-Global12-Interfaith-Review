@@ -1,4 +1,4 @@
-alert("mobile redirect 실행됨");
+alert("redirect loaded");
 
 const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
